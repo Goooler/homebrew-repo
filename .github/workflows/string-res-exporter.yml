@@ -1,0 +1,35 @@
+name: StringResExporter
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'Formula/string-res-exporter.rb'
+  pull_request:
+    paths:
+      - 'Formula/string-res-exporter.rb'
+
+jobs:
+  build:
+    name: Build
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: brew pull & reset & tap
+        run: |
+          brew update-reset "$(brew --repository)"
+          brew update-reset "$(brew --repository homebrew/cask)"
+          mkdir -p $(brew --repo)/Library/Taps/goooler
+          ln -s $GITHUB_WORKSPACE $(brew --repo)/Library/Taps/goooler/homebrew-repo
+        env:
+          HOMEBREW_COLOR: 1
+          HOMEBREW_DEVELOPER: 1
+      - run: brew install string-res-exporter
+        env:
+          HOMEBREW_COLOR: 1
+          HOMEBREW_DEVELOPER: 1
+      - run: string-res-exporter
+        env:
+          HOMEBREW_COLOR: 1
+          HOMEBREW_DEVELOPER: 1
