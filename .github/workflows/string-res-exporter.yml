@@ -16,6 +16,9 @@ jobs:
   build:
     name: Build
     runs-on: macos-latest
+    env:
+      HOMEBREW_COLOR: 1
+      HOMEBREW_DEVELOPER: 1
     steps:
       - uses: actions/checkout@v4
       - name: brew pull & reset & tap
@@ -24,14 +27,5 @@ jobs:
           brew update-reset "$(brew --repository homebrew/cask)"
           mkdir -p $(brew --repo)/Library/Taps/goooler
           ln -s $GITHUB_WORKSPACE $(brew --repo)/Library/Taps/goooler/homebrew-repo
-        env:
-          HOMEBREW_COLOR: 1
-          HOMEBREW_DEVELOPER: 1
       - run: brew install string-res-exporter
-        env:
-          HOMEBREW_COLOR: 1
-          HOMEBREW_DEVELOPER: 1
-      - run: string-res-exporter
-        env:
-          HOMEBREW_COLOR: 1
-          HOMEBREW_DEVELOPER: 1
+      - run: brew uninstall string-res-exporter
