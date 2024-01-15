@@ -15,6 +15,6 @@ class StringResExporter < Formula
 
   test do
     output = shell_output("#{bin}/string-res-exporter --help")
-    assert_includes? output, "java.lang.ArrayIndexOutOfBoundsException"
+    assert_includes output, "java.lang.ArrayIndexOutOfBoundsException"
   end
 end
