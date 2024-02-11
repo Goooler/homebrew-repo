@@ -14,7 +14,7 @@ class StringResExporter < Formula
   end
 
   test do
-    output = shell_output("#{bin}/string-res-exporter --help")
-    assert_includes output, "Index 1 out of bounds for length 1"
+    output = shell_output("#{bin}/string-res-exporter -v")
+    assert_includes output, "version #{version}"
   end
 end
