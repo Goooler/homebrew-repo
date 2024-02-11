@@ -1,9 +1,9 @@
 class StringResExporter < Formula
   desc "A tool for exporting and importing string resources from an Android project to a XLS file"
   homepage "https://github.com/Goooler/StringResExporter"
-  url "https://github.com/Goooler/StringResExporter/releases/download/v0.2.0/string-res-exporter-0.2.0-binary.jar"
-  version "0.2.0"
-  sha256 "cf571b0ee8840ac2b2f55ee9d0fc851dac473834db8a6b633deab24fb96e2025"
+  url "https://github.com/Goooler/StringResExporter/releases/download/v0.2.1/string-res-exporter-0.2.1-binary.jar"
+  version "0.2.1"
+  sha256 "3ef13f0d454f73b037c4bfa52bc6814fb92ab815cdaf66d2d8920c6e9728737c"
 
   depends_on "openjdk"
 
@@ -14,7 +14,7 @@ class StringResExporter < Formula
   end
 
   test do
-    output = shell_output("#{bin}/string-res-exporter --help")
-    assert_includes output, "Index 1 out of bounds for length 1"
+    output = shell_output("#{bin}/string-res-exporter -v")
+    assert_includes output, "version #{version}"
   end
 end
