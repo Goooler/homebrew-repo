@@ -13,7 +13,7 @@ jobs:
       - uses: Homebrew/actions/setup-homebrew@master
       - uses: Homebrew/actions/git-user-config@master
         with:
-          username: 'BrewBot'
+          username: 'BrewTestBot'
       - uses: Homebrew/actions/bump-packages@master
         continue-on-error: true
         with:
