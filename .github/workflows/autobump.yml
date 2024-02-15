@@ -1,0 +1,22 @@
+on:
+  schedule:
+    # Run every hour.
+    - cron: "0 * * * *"
+  workflow_dispatch:
+
+
+jobs:
+  autobump:
+    if: github.repository == 'Goooler/homebrew-repo'
+    runs-on: macos-latest
+    steps:
+      - uses: Homebrew/actions/setup-homebrew@master
+      - uses: Homebrew/actions/git-user-config@master
+        with:
+          username: 'BrewBot'
+      - uses: Homebrew/actions/bump-packages@master
+        continue-on-error: true
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          formulae: |
+            string-res-exporter
