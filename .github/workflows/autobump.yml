@@ -17,6 +17,6 @@ jobs:
       - uses: Homebrew/actions/bump-packages@master
         continue-on-error: true
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
           formulae: |
             string-res-exporter
