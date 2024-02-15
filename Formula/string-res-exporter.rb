@@ -1,8 +1,8 @@
 class StringResExporter < Formula
   desc "A tool for exporting and importing string resources from an Android project to a XLS file"
   homepage "https://github.com/Goooler/StringResExporter"
-  url "https://github.com/Goooler/StringResExporter/releases/download/v0.2.2/string-res-exporter-0.2.2-binary.jar"
   version "0.2.2"
+  url "https://github.com/Goooler/StringResExporter/releases/download/v#{version}/string-res-exporter-#{version}-binary.jar"
   sha256 "5855d97a86116d4c0bbc6d6c88bf05679d58b468f426b0ae7cabff408419535d"
 
   depends_on "openjdk"
