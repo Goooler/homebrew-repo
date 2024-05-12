@@ -9,7 +9,8 @@ cask "kotlin-explorer" do
   homepage "https://github.com/romainguy/kotlin-explorer"
 
   auto_updates true
-  depends_on "openjdk", "kotlin"
+  depends_on "openjdk"
+  depends_on "kotlin"
 
   app "Kotlin Explorer.app"
 end
