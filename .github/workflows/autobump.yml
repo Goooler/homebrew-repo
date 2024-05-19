@@ -3,7 +3,12 @@ on:
     # Run every hour.
     - cron: "0 * * * *"
   workflow_dispatch:
-
+  push:
+    paths:
+      - '.github/workflows/autobump.yml'
+  pull_request:
+    paths:
+      - '.github/workflows/autobump.yml'
 
 jobs:
   autobump:
@@ -20,3 +25,5 @@ jobs:
           token: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
           formulae: |
             string-res-exporter
+          casks: |
+            kotlin-explorer
