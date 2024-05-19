@@ -1,8 +1,8 @@
 cask "kotlin-explorer" do
-  version "1.1.0"
-  sha256 "51820eee6d61ad6179f3ad16db86544799e179d9314e52b82c7ae70ee13b1457"
+  version "1.2.0"
+  sha256 "5af955fa83874f254cede4593833b02ae3e32bb96e3115c2a1029893130ba667"
 
-  url "https://github.com/romainguy/kotlin-explorer/releases/download/v#{version}/kotlin-explorer-#{version}.dmg"
+  url "https://github.com/romainguy/kotlin-explorer/releases/download/v#{version}/Kotlin.Explorer-#{version}.dmg"
   name "Kotlin Explorer"
   desc "Kotlin Explorer is a desktop tool to quickly and easily disassemble Kotlin code into: Java bytecode, Android DEX bytecode, and Android OAT assembly."
   homepage "https://github.com/romainguy/kotlin-explorer"
