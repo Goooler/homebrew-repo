@@ -4,7 +4,7 @@ cask "kotlin-explorer" do
 
   url "https://github.com/romainguy/kotlin-explorer/releases/download/v#{version}/Kotlin.Explorer-#{version}.dmg"
   name "Kotlin Explorer"
-  desc "Kotlin Explorer is a desktop tool to quickly and easily disassemble Kotlin code into: Java bytecode, Android DEX bytecode, and Android OAT assembly."
+  desc "Kotlin Explorer is a desktop tool to quickly and easily disassemble Kotlin code."
   homepage "https://github.com/romainguy/kotlin-explorer"
 
   auto_updates true
