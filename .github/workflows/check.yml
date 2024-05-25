@@ -3,15 +3,15 @@ on:
     branches:
       - main
     paths:
-      - '.github/workflows/audit.yml'
+      - '.github/workflows/check.yml'
       - 'Casks/**'
   pull_request:
     paths:
-      - '.github/workflows/audit.yml'
+      - '.github/workflows/check.yml'
       - 'Casks/**'
 
 jobs:
-  install:
+  check:
     runs-on: macos-latest
     env:
       HOMEBREW_COLOR: 1
