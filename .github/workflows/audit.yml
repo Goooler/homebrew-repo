@@ -26,10 +26,12 @@ jobs:
       - name: Audit formulas
         run: |
           for formula in $(ls Formula/*.rb | xargs -n 1 basename | cut -d. -f1); do
+            echo "Auditing $formula"
             brew audit --strict $formula
           done
       - name: Audit casks
         run: |
           for cask in $(ls Casks/*.rb | xargs -n 1 basename | cut -d. -f1); do
+            echo "Auditing $cask"
             brew audit --strict $cask
           done
