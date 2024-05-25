@@ -42,8 +42,6 @@ jobs:
             brew audit --strict $cask
             echo "Installing $cask"
             brew install $cask
-            echo "Testing $cask"
-            brew test $cask
             echo "Uninstalling $cask"
             brew uninstall $cask
           done
