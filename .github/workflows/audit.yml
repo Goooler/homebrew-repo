@@ -25,11 +25,11 @@ jobs:
           ln -s $GITHUB_WORKSPACE $(brew --repo)/Library/Taps/goooler/homebrew-repo
       - name: Audit formulas
         run: |
-          for formula in $(find . -name "*.rb" -not -path "./Casks/*"); do
+          for formula in $(ls Formula/*.rb | xargs -n 1 basename | cut -d. -f1); do
             brew audit --strict $formula
           done
       - name: Audit casks
         run: |
-          for cask in $(find ./Casks -name "*.rb"); do
+          for $cask in $(ls Casks/*.rb | xargs -n 1 basename | cut -d. -f1); do
             brew audit --cask $cask
           done
