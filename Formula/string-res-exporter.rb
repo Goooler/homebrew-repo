@@ -1,6 +1,6 @@
 class StringResExporter < Formula
-  version "0.2.2"
-  sha256 "5855d97a86116d4c0bbc6d6c88bf05679d58b468f426b0ae7cabff408419535d"
+  version "0.2.3"
+  sha256 "54349e3196b3e5bf7a86de2a8e4b9e89ec29849d4d82a2a9b9da3e53572c1480"
 
   desc "A tool for exporting and importing string resources from an Android project to a XLS file"
   homepage "https://github.com/Goooler/StringResExporter"
