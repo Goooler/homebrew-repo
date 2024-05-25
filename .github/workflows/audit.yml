@@ -31,5 +31,5 @@ jobs:
       - name: Audit casks
         run: |
           for cask in $(ls Casks/*.rb | xargs -n 1 basename | cut -d. -f1); do
-            brew audit --cask $cask
+            brew audit --strict $cask
           done
