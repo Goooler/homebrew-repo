@@ -23,15 +23,27 @@ jobs:
           brew update-reset "$(brew --repository)"
           mkdir -p $(brew --repo)/Library/Taps/goooler
           ln -s $GITHUB_WORKSPACE $(brew --repo)/Library/Taps/goooler/homebrew-repo
-      - name: Audit formulas
+      - name: Check formulas
         run: |
           for formula in $(ls Formula/*.rb | xargs -n 1 basename | cut -d. -f1); do
             echo "Auditing $formula"
             brew audit --strict $formula
+            echo "Installing $formula"
+            brew install $formula
+            echo "Testing $formula"
+            brew test $formula
+            echo "Uninstalling $formula"
+            brew uninstall $formula
           done
-      - name: Audit casks
+      - name: Check casks
         run: |
           for cask in $(ls Casks/*.rb | xargs -n 1 basename | cut -d. -f1); do
             echo "Auditing $cask"
             brew audit --strict $cask
+            echo "Installing $cask"
+            brew install $cask
+            echo "Testing $cask"
+            brew test $cask
+            echo "Uninstalling $cask"
+            brew uninstall $cask
           done
