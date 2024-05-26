@@ -1,0 +1,35 @@
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/check-casks.yml'
+      - 'Casks/**'
+  pull_request:
+    paths:
+      - '.github/workflows/check-casks.yml'
+      - 'Casks/**'
+
+jobs:
+  check:
+    runs-on: macos-latest
+    env:
+      HOMEBREW_COLOR: 1
+      HOMEBREW_DEVELOPER: 1
+    steps:
+      - uses: actions/checkout@v4
+      - name: brew pull & reset & tap
+        run: |
+          brew update-reset "$(brew --repository)"
+          mkdir -p $(brew --repo)/Library/Taps/goooler
+          ln -s $GITHUB_WORKSPACE $(brew --repo)/Library/Taps/goooler/homebrew-repo
+      - name: Check Casks
+        run: |
+          for cask in $(ls Casks/*.rb | xargs -n 1 basename | cut -d. -f1); do
+            echo "Auditing $cask"
+            brew audit --strict $cask
+            echo "Installing $cask"
+            brew install $cask
+            echo "Uninstalling $cask"
+            brew uninstall $cask
+          done
