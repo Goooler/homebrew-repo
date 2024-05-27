@@ -7,7 +7,5 @@ cask "kotlin-explorer" do
   desc "Kotlin Explorer is a desktop tool to quickly and easily disassemble Kotlin code"
   homepage "https://github.com/romainguy/kotlin-explorer"
 
-  auto_updates true
-
   app "Kotlin Explorer.app"
 end
