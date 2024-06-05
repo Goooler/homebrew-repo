@@ -4,7 +4,7 @@ cask "kotlin-explorer" do
 
   url "https://github.com/romainguy/kotlin-explorer/releases/download/v#{version}/kotlin-explorer-#{version}.dmg"
   name "Kotlin Explorer"
-  desc "A desktop tool to quickly and easily disassemble Kotlin code"
+  desc "Quickly and easily disassemble Kotlin code"
   homepage "https://github.com/romainguy/kotlin-explorer"
 
   app "Kotlin Explorer.app"
