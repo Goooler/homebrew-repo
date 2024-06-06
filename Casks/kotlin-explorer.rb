@@ -1,6 +1,6 @@
 cask "kotlin-explorer" do
-  version "1.3.0"
-  sha256 "e5292252bd12c698ef93b184fe2a93aa97f4668e6d52d7a6c4e24902685a963e"
+  version "1.3.1"
+  sha256 "e1da70b866766e659f268338a21462fbf04d4e9fc2bb55613eca9a2dac1a4b6b"
 
   url "https://github.com/romainguy/kotlin-explorer/releases/download/v#{version}/kotlin-explorer-#{version}.dmg"
   name "Kotlin Explorer"
