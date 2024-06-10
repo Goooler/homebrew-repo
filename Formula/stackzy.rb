@@ -11,7 +11,11 @@ class Stackzy < Formula
   end
 
   def install
-    libexec.install Dir["*"].first => "stackzy.jar"
+    libexec.install Dir["*.jar"].first => "stackzy.jar"
     bin.write_jar_script libexec / "stackzy.jar", "stackzy"
+  end
+
+  test do
+    system "#{bin}/stackzy", "--version"
   end
 end
