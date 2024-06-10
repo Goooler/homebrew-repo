@@ -11,8 +11,7 @@ class Stackzy < Formula
   end
 
   def install
-    mv "*.jar", "stackzy.jar"
-    libexec.install "stackzy.jar"
+    libexec.install Dir["*"].first => "stackzy.jar"
     bin.write_jar_script libexec / "stackzy.jar", "stackzy"
   end
 end
