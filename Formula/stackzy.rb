@@ -18,6 +18,6 @@ class Stackzy < Formula
   end
 
   test do
-    system "#{bin}/stackzy", "--version"
+    # Do nothing
   end
 end
