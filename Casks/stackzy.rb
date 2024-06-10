@@ -11,6 +11,7 @@ cask 'stackzy' do
 
   name 'Stackzy'
   homepage 'https://github.com/theapache64/stackzy'
+  desc 'Desktop app to analyse APK. Built using Compose desktop'
 
   app 'Stackzy.app'
 end
