@@ -10,6 +10,8 @@ class Stackzy < Formula
     url "https://github.com/theapache64/stackzy/releases/download/1.2.6/Stackzy-macos-arm64-1.2.6.jar"
   end
 
+  depends_on "openjdk"
+
   def install
     libexec.install Dir["*.jar"].first => "stackzy.jar"
     bin.write_jar_script libexec / "stackzy.jar", "stackzy"
