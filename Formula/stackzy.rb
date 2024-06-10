@@ -1,4 +1,6 @@
-cask 'stackzy' do
+class Stackzy < Formula
+  desc 'A desktop app to analyse APK. Built using Compose desktop'
+  homepage 'https://github.com/theapache64/stackzy'
   version '1.2.6'
 
   if Hardware::CPU.intel?
@@ -9,9 +11,9 @@ cask 'stackzy' do
     url "https://github.com/theapache64/stackzy/releases/download/#{version}/Stackzy-macos-arm64-#{version}.jar"
   end
 
-  name 'Stackzy'
-  homepage 'https://github.com/theapache64/stackzy'
-  desc 'Desktop app to analyse APK. Built using Compose desktop'
-
-  app 'Stackzy.app'
+  def install
+    mv "*.jar", "stackzy.jar"
+    libexec.install "stackzy.jar"
+    bin.write_jar_script libexec / "stackzy.jar", "stackzy"
+  end
 end
