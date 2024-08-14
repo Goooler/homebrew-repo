@@ -19,7 +19,7 @@ jobs:
           - macos-latest
           # macos-12 is based on x64.
           - macos-12
-    runs-on: macos-latest
+    runs-on: ${{ matrix.os }}
     env:
       HOMEBREW_COLOR: 1
       HOMEBREW_DEVELOPER: 1
