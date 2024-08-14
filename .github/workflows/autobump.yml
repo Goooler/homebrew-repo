@@ -14,15 +14,18 @@ jobs:
   autobump:
     if: github.repository == 'Goooler/homebrew-repo'
     runs-on: macos-latest
+    permissions:
+      contents: write
     steps:
       - uses: Homebrew/actions/setup-homebrew@master
-      - uses: Homebrew/actions/git-user-config@master
-        with:
-          username: 'BrewTestBot'
+      - name: Set up Git
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
       - uses: Homebrew/actions/bump-packages@master
         continue-on-error: true
         with:
-          token: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           formulae: |
             string-res-exporter
           casks: |
