@@ -7,7 +7,7 @@ cask "kotlin-explorer" do
     url "https://github.com/romainguy/kotlin-explorer/releases/download/v#{version}/kotlin-explorer-arm64-#{version}.dmg"
   end
   on_intel do
-    sha256 "7a1970af3c27936f79077732a9170078f6b010e1acc9fb25082d7501d37801b8"
+    sha256 "354468bc4a1ec11195e1569dfacfa3ce668d8193430df4f40d50c6609bc34f77"
 
     url "https://github.com/romainguy/kotlin-explorer/releases/download/v#{version}/kotlin-explorer-x64-#{version}.dmg"
   end
