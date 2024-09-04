@@ -14,8 +14,7 @@ jobs:
   autobump:
     if: github.repository == 'Goooler/homebrew-repo'
     runs-on: macos-latest
-    permissions:
-      contents: write
+    permissions: write-all
     steps:
       - uses: Homebrew/actions/setup-homebrew@master
       - name: Set up Git
