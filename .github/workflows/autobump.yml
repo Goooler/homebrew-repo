@@ -17,6 +17,10 @@ jobs:
     permissions: write-all
     steps:
       - uses: Homebrew/actions/setup-homebrew@master
+      - name: Set up Git
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
       - uses: Homebrew/actions/bump-packages@master
         continue-on-error: true
         with:
