@@ -2,7 +2,7 @@ cask "clash-nyanpasu" do
   version "1.6.0"
 
   on_arm do
-    sha256 "916c4dbcb3e650898f85556c4a6e6c0628788139163c47a8e46c51ad099aa619"
+    sha256 "69a6a6e5ba91c8dc06992f0b26751542019b0955f3c0ff28075766ee3526badd"
     url "https://github.com/libnyanpasu/clash-nyanpasu/releases/download/v#{version}/Clash.Nyanpasu_#{version}_aarch64.dmg"
   end
   on_intel do
