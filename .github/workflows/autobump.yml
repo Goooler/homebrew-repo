@@ -24,9 +24,10 @@ jobs:
       - uses: Homebrew/actions/bump-packages@master
         continue-on-error: true
         with:
+          fork: false
           token: ${{ secrets.GITHUB_TOKEN }}
-          formulae: |
+          formulae: >
             string-res-exporter
-          casks: |
+          casks: >
             kotlin-explorer
             clash-nyanpasu
