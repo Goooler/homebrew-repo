@@ -6,7 +6,7 @@ cask "clash-nyanpasu" do
     url "https://github.com/libnyanpasu/clash-nyanpasu/releases/download/v#{version}/Clash.Nyanpasu_#{version}_aarch64.dmg"
   end
   on_intel do
-    sha256 "0db4dbeb2bb5d47a2998495b18db3d8b955e9b85c61ff23b5969c801dc8e81cd"
+    sha256 "2f1e8d773097c1c61ffa0d1be6c4cbfa9a2d71745cc0d9ac8ed5215a4267b7a4"
     url "https://github.com/libnyanpasu/clash-nyanpasu/releases/download/v#{version}/Clash.Nyanpasu_#{version}_x64.dmg"
   end
 
