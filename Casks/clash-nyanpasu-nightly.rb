@@ -14,5 +14,5 @@ cask "clash-nyanpasu-nightly" do
   desc "Clash GUI based on Tauri"
   homepage "https://github.com/libnyanpasu/clash-nyanpasu"
 
-  app "Clash Nyanpasu Nightly.app"
+  app "Clash Nyanpasu.app", target: "Clash Nyanpasu Nightly.app"
 end
