@@ -31,4 +31,3 @@ jobs:
           casks: >
             kotlin-explorer
             clash-nyanpasu
-            clash-nyanpasu-nightly
