@@ -1,12 +1,14 @@
 cask "kotlin-explorer" do
-  version "1.6.5"
+  version "1.6.6"
 
   on_arm do
-    sha256 "916c4dbcb3e650898f85556c4a6e6c0628788139163c47a8e46c51ad099aa619"
+    sha256 "ec7a3e74b9abc475c75f0fbca4f0bd7fef864e41d9f110061e79dc21434059e7"
+
     url "https://github.com/romainguy/kotlin-explorer/releases/download/v#{version}/kotlin-explorer-arm64-#{version}.dmg"
   end
   on_intel do
-    sha256 "0db4dbeb2bb5d47a2998495b18db3d8b955e9b85c61ff23b5969c801dc8e81cd"
+    sha256 "8687415794c00d65af4d7262d4b07deb82e747121d77d0c6172df93eb60f7fb4"
+
     url "https://github.com/romainguy/kotlin-explorer/releases/download/v#{version}/kotlin-explorer-x64-#{version}.dmg"
   end
 
