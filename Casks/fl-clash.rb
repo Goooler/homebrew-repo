@@ -11,7 +11,7 @@ cask "fl-clash" do
   end
 
   name "FlClash"
-  desc "Multi-platform proxy client based on ClashMeta, simple and easy to use, open-source and ad-free."
+  desc "Multi-platform proxy client based on ClashMeta"
   homepage "https://github.com/chen08209/FlClash"
 
   app "FlClash.app"
