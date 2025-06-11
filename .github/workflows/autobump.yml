@@ -31,3 +31,5 @@ jobs:
           casks: >
             kotlin-explorer
             clash-nyanpasu
+            fl-clash
+            hiddify
