@@ -1,3 +1,5 @@
+name: Auto Bump
+
 on:
   schedule:
     # Run every hour.
@@ -11,7 +13,7 @@ on:
       - '.github/workflows/autobump.yml'
 
 jobs:
-  autobump:
+  bump:
     if: github.event.repository.fork == false
     runs-on: macos-latest
     permissions: write-all
