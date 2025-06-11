@@ -12,7 +12,7 @@ on:
 
 jobs:
   autobump:
-    if: github.repository == 'Goooler/homebrew-repo'
+    if: github.event.repository.fork == false
     runs-on: macos-latest
     permissions: write-all
     steps:
