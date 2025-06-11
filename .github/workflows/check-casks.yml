@@ -32,11 +32,12 @@ jobs:
           ln -s $GITHUB_WORKSPACE $(brew --repo)/Library/Taps/goooler/homebrew-repo
       - name: Check Casks
         run: |
+          # Prefer the local casks via `Goooler/repo/` prefixes.
           for cask in $(ls Casks/*.rb | xargs -n 1 basename | cut -d. -f1); do
             echo "Auditing $cask"
-            brew audit --strict $cask
+            brew audit --strict Goooler/repo/$cask
             echo "Installing $cask"
-            brew install $cask
+            brew install Goooler/repo/$cask
             echo "Uninstalling $cask"
-            brew uninstall $cask
+            brew uninstall Goooler/repo/$cask
           done
