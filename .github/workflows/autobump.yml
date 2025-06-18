@@ -31,7 +31,7 @@ jobs:
           formulae: >
             string-res-exporter
           casks: >
-            kotlin-explorer
             clash-nyanpasu
             fl-clash
             hiddify
+            kotlin-explorer
