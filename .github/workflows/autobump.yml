@@ -29,10 +29,10 @@ jobs:
           fork: false
           token: ${{ secrets.GITHUB_TOKEN }}
           formulae: >
-            Goooler/repo/string-res-exporter
+            string-res-exporter
           casks: >
-            Goooler/repo/kotlin-explorer
-            Goooler/repo/clash-nyanpasu
-            Goooler/repo/fl-clash
-            Goooler/repo/hiddify
-            Goooler/repo/mihomo-party
+            kotlin-explorer
+            clash-nyanpasu
+            fl-clash
+            hiddify
+            mihomo-party
