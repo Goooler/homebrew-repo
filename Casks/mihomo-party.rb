@@ -26,11 +26,6 @@ cask "mihomo-party" do
   desc "Another Mihomo GUI"
   homepage "https://mihomo.party/"
 
-  livecheck do
-    url :url
-    strategy :github_latest
-  end
-
   depends_on macos: ">= :catalina"
 
   uninstall launchctl: "party.mihomo.helper",
