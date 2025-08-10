@@ -7,7 +7,5 @@ cask "hiddify" do
   desc "Multi-platform auto-proxy client"
   homepage "https://github.com/hiddify/hiddify-app"
 
-  depends_on macos: ">= :catalina"
-
   app "Hiddify.app"
 end
