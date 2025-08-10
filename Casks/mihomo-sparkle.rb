@@ -20,5 +20,14 @@ cask "mihomo-sparkle" do
   desc "Another Mihomo GUI"
   homepage "https://github.com/xishang0128/sparkle"
 
+  postflight do
+    system_command "/usr/libexec/PlistBuddy", # TODO: https://github.com/xishang0128/sparkle/issues/28
+      args: [
+        "-c", "Add :LSUIElement integer 1", # https://discussions.apple.com/thread/7444141
+        "/Applications/Sparkle.app/Contents/Info.plist"
+      ],
+      sudo: true
+  end
+
   uninstall pkgutil: "com.xishang0128.sparkle"
 end
