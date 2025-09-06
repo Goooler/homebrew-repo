@@ -33,6 +33,7 @@ jobs:
           formulae: >
             string-res-exporter
           casks: >
+            any-portal
             clash-nyanpasu
             fl-clash
             hiddify
