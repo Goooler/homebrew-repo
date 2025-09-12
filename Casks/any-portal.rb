@@ -1,6 +1,6 @@
 cask "any-portal" do
-  version "0.6.24+98"
-  sha256 "5dd95b5ca053f73a7b5bd51eae10a579698baec3c3afe09aeb25bcffe3509754"
+  version "0.6.30+104"
+  sha256 "8ef073434b3f8e36c018878af1bf670db17d35382f97d0ab0bb89be301f60a7f"
 
   url "https://github.com/AnyPortal/AnyPortal/releases/download/v#{version}/anyportal-macos.dmg"
   name "AnyPortal"
