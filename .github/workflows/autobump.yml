@@ -34,8 +34,4 @@ jobs:
             string-res-exporter
           casks: >
             any-portal
-            clash-nyanpasu
-            fl-clash
-            hiddify
-            kotlin-explorer
             mihomo-sparkle
