@@ -1,15 +1,15 @@
 cask "mihomo-sparkle" do
-  version "1.6.14"
+  version "1.6.15"
 
   on_arm do
-    sha256 "db203b0c8833e0e176e9a222d8df5ea72451494f05bfb6b92fb9e2dbcb28bd52"
+    sha256 "b2a827dec0c6fe8c38be3067877f845dfa7961b352a6a19971e7cfb1cceb2111"
 
     url "https://github.com/xishang0128/sparkle/releases/download/#{version}/sparkle-macos-#{version}-arm64.pkg"
 
     pkg "sparkle-macos-#{version}-arm64.pkg"
   end
   on_intel do
-    sha256 "614565c8703338c210d1498dab801c6fc8eff2042bc3145ed0413536bd7cf794"
+    sha256 "5644cb13e78d6e92ea9c01ff4b1c155ce74409d913a43acdea18508d0399452b"
 
     url "https://github.com/xishang0128/sparkle/releases/download/#{version}/sparkle-macos-#{version}-x64.pkg"
 
