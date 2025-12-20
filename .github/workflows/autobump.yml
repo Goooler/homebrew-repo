@@ -35,6 +35,7 @@ jobs:
           casks: >
             any-portal
             clash-nyanpasu
+            clash-mac
             fl-clash
             hiddify
             kotlin-explorer
