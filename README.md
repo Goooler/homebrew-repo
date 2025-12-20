@@ -11,6 +11,7 @@ brew install <name>
 |-------------------------------------------------------|-----------------------------------------------|
 | [any-portal](Casks/any-portal.rb)                     | https://github.com/AnyPortal/AnyPortal        |
 | [clash-nyanpasu](Casks/clash-nyanpasu.rb)             | https://github.com/libnyanpasu/clash-nyanpasu |
+| [clash-mac](Casks/clash-mac.rb)                       | https://github.com/666OS/ClashMac             |
 | [fl-clash](Casks/fl-clash.rb)                         | https://github.com/chen08209/FlClash          |
 | [hiddify](Casks/hiddify.rb)                           | https://github.com/hiddify/hiddify-app        |
 | [kotlin-explorer](Casks/kotlin-explorer.rb)           | https://github.com/romainguy/kotlin-explorer  |
