@@ -47,10 +47,14 @@ jobs:
       - name: Extract package name
         run: |
           echo "PACKAGE_NAME=$(basename "${{ matrix.packages }}" .rb)" >> $GITHUB_ENV
-      - name: Install package
-        run: brew install ${{ env.PACKAGE_NAME }}
-      - name: Uninstall package
-        run: brew uninstall ${{ env.PACKAGE_NAME }}
+      - name: Check Package
+        run: |
+          echo "Auditing ${{ env.PACKAGE_NAME }}"
+          brew audit --strict ${{ env.PACKAGE_NAME }}
+          echo "Installing ${{ env.PACKAGE_NAME }}"
+          brew install ${{ env.PACKAGE_NAME }}
+          echo "Uninstalling ${{ env.PACKAGE_NAME }}"
+          brew uninstall ${{ env.PACKAGE_NAME }}
 
   # Status check that is required in branch protection rules.
   final-status:
