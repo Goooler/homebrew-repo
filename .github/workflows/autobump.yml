@@ -47,3 +47,10 @@ jobs:
           token: ${{ steps.app-token.outputs.token }}
           formulae: ${{ steps.enum-packages.outputs.formulae }}
           casks: ${{ steps.enum-packages.outputs.casks }}
+      - name: Merge PRs
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          for url in $(gh pr list --state open --author "github-actions[bot]" --json url --jq '.[].url'); do
+            gh pr merge "$url" --auto --squash
+          done
