@@ -17,6 +17,8 @@ cask "clash-mac" do
   end
 
   name "ClashMac"
-  desc "Lightweight macOS Clash Menu Bar Client"
+  desc "Lightweight Clash Menu Bar Client"
   homepage "https://github.com/666OS/ClashMac"
+
+  depends_on macos: ">= :big_sur"
 end
