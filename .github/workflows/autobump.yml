@@ -8,11 +8,7 @@ on:
   push:
     branches:
       - main
-    paths:
-      - '.github/workflows/autobump.yml'
   pull_request:
-    paths:
-      - '.github/workflows/autobump.yml'
 
 jobs:
   bump:
