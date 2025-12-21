@@ -16,7 +16,7 @@ jobs:
       - uses: tj-actions/changed-files@v47
         id: changed-files
         with:
-          files: '**/**.rb'
+          files: '**/*.rb'
           matrix: true
       - name: List all changed files
         run: echo '${{ steps.changed-files.outputs.all_changed_files }}'
