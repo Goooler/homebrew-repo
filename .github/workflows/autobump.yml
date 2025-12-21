@@ -29,8 +29,12 @@ jobs:
       - name: Enum packages
         id: enum-packages
         run: |
-          echo "formulae=$(ls Formula/*.rb 2>/dev/null | xargs -n1 basename -s .rb | xargs)" >> $GITHUB_OUTPUT
-          echo "casks=$(ls Casks/*.rb 2>/dev/null | xargs -n1 basename -s .rb | xargs)" >> $GITHUB_OUTPUT
+          formulae=$(ls Formula/*.rb 2>/dev/null | xargs -n1 basename -s .rb | xargs)
+          casks=$(ls Casks/*.rb 2>/dev/null | xargs -n1 basename -s .rb | xargs)
+          echo "formulae: $formulae"
+          echo "casks: $casks"
+          echo "formulae=$formulae" >> $GITHUB_OUTPUT
+          echo "casks=$casks" >> $GITHUB_OUTPUT
       - uses: Homebrew/actions/bump-packages@master
         continue-on-error: true
         with:
