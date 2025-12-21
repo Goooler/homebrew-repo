@@ -20,23 +20,44 @@ jobs:
     runs-on: macos-latest
     permissions: write-all
     steps:
+      - uses: actions/checkout@v6
       - uses: Homebrew/actions/setup-homebrew@master
       - name: Set up Git
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
+      - name: Gather packages
+        id: gather
+        run: |
+          set -eu
+          formulae=""
+          if [ -d Formula ]; then
+            for f in Formula/*.rb; do
+              [ -e "$f" ] || continue
+              name=${f##*/}
+              name=${name%.rb}
+              formulae="$formulae $name"
+            done
+            formulae=$(echo $formulae | xargs || true)
+          fi
+
+          casks=""
+          if [ -d Casks ]; then
+            for f in Casks/*.rb; do
+              [ -e "$f" ] || continue
+              name=${f##*/}
+              name=${name%.rb}
+              casks="$casks $name"
+            done
+            casks=$(echo $casks | xargs || true)
+          fi
+
+          echo "formulae=$formulae" >> $GITHUB_OUTPUT
+          echo "casks=$casks" >> $GITHUB_OUTPUT
       - uses: Homebrew/actions/bump-packages@master
         continue-on-error: true
         with:
           fork: false
           token: ${{ secrets.GITHUB_TOKEN }}
-          formulae: >
-            string-res-exporter
-          casks: >
-            any-portal
-            clash-nyanpasu
-            clash-mac
-            fl-clash
-            hiddify
-            kotlin-explorer
-            mihomo-sparkle
+          formulae: ${{ steps.gather.outputs.formulae }}
+          casks: ${{ steps.gather.outputs.casks }}
