@@ -7,13 +7,13 @@ brew tap Goooler/homebrew-repo
 brew install <name>
 ```
 
-| Package Name                                          | Project                                       |
-|-------------------------------------------------------|-----------------------------------------------|
-| [any-portal](Casks/any-portal.rb)                     | https://github.com/AnyPortal/AnyPortal        |
-| [clash-nyanpasu](Casks/clash-nyanpasu.rb)             | https://github.com/libnyanpasu/clash-nyanpasu |
-| [clash-mac](Casks/clash-mac.rb)                       | https://github.com/666OS/ClashMac             |
-| [fl-clash](Casks/fl-clash.rb)                         | https://github.com/chen08209/FlClash          |
-| [hiddify](Casks/hiddify.rb)                           | https://github.com/hiddify/hiddify-app        |
-| [kotlin-explorer](Casks/kotlin-explorer.rb)           | https://github.com/romainguy/kotlin-explorer  |
-| [mihomo-sparkle](Casks/mihomo-sparkle.rb)             | https://github.com/xishang0128/sparkle        |
-| [string-res-exporter](Formula/string-res-exporter.rb) | https://github.com/Goooler/StringResExporter  |
+| Package Name          | Project                                       |
+|-----------------------|-----------------------------------------------|
+| `any-portal`          | https://github.com/AnyPortal/AnyPortal        |
+| `clash-mac`           | https://github.com/666OS/ClashMac             |
+| `clash-nyanpasu`      | https://github.com/libnyanpasu/clash-nyanpasu |
+| `fl-clash`            | https://github.com/chen08209/FlClash          |
+| `hiddify`             | https://github.com/hiddify/hiddify-app        |
+| `kotlin-explorer`     | https://github.com/romainguy/kotlin-explorer  |
+| `mihomo-sparkle`      | https://github.com/xishang0128/sparkle        |
+| `string-res-exporter` | https://github.com/Goooler/StringResExporter  |
