@@ -29,31 +29,8 @@ jobs:
       - name: Enum packages
         id: enum-packages
         run: |
-          set -eu
-          formulae=""
-          if [ -d Formula ]; then
-            for f in Formula/*.rb; do
-              [ -e "$f" ] || continue
-              name=${f##*/}
-              name=${name%.rb}
-              formulae="$formulae $name"
-            done
-            formulae=$(echo $formulae | xargs || true)
-          fi
-
-          casks=""
-          if [ -d Casks ]; then
-            for f in Casks/*.rb; do
-              [ -e "$f" ] || continue
-              name=${f##*/}
-              name=${name%.rb}
-              casks="$casks $name"
-            done
-            casks=$(echo $casks | xargs || true)
-          fi
-
-          echo "formulae=$formulae" >> $GITHUB_OUTPUT
-          echo "casks=$casks" >> $GITHUB_OUTPUT
+          echo "formulae=$(ls Formula/*.rb 2>/dev/null | xargs -n1 basename -s .rb | xargs)" >> $GITHUB_OUTPUT
+          echo "casks=$(ls Casks/*.rb 2>/dev/null | xargs -n1 basename -s .rb | xargs)" >> $GITHUB_OUTPUT
       - uses: Homebrew/actions/bump-packages@master
         continue-on-error: true
         with:
