@@ -13,9 +13,8 @@ jobs:
       matrix: ${{ steps.changed-files.outputs.all_changed_files }}
     steps:
       - uses: actions/checkout@v6
-      - name: Get changed files
+      - uses: tj-actions/changed-files@v47
         id: changed-files
-        uses: tj-actions/changed-files@v47
         with:
           files: '**/**.rb'
           matrix: true
