@@ -54,7 +54,6 @@ jobs:
 
   # Status check that is required in branch protection rules.
   final-status:
-    name: Final status
     needs:
       - changed-packages
       - verify-packages
