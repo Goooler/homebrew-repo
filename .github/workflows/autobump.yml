@@ -50,6 +50,7 @@ jobs:
       - name: Merge PRs
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        # TODO: https://github.com/Homebrew/actions/issues/746
         run: |
           for url in $(gh pr list --state open --author "github-actions[bot]" --json url --jq '.[].url'); do
             gh pr merge "$url" --auto --squash
