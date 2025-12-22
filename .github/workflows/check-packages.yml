@@ -33,9 +33,6 @@ jobs:
           - macos-latest # Based on arm64.
           - macos-15-intel # Based on x64.
     runs-on: ${{ matrix.os }}
-    env:
-      HOMEBREW_COLOR: 1
-      HOMEBREW_DEVELOPER: 1
     steps:
       - uses: actions/checkout@v6
       - uses: Homebrew/actions/setup-homebrew@main
