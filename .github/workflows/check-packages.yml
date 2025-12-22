@@ -38,11 +38,7 @@ jobs:
       HOMEBREW_DEVELOPER: 1
     steps:
       - uses: actions/checkout@v6
-      - name: brew pull & reset & tap
-        run: |
-          brew update-reset "$(brew --repository)"
-          mkdir -p $(brew --repo)/Library/Taps/goooler
-          ln -s $GITHUB_WORKSPACE $(brew --repo)/Library/Taps/goooler/homebrew-repo
+      - uses: Homebrew/actions/setup-homebrew@main
       - name: Extract package name
         run: |
           echo "PACKAGE_NAME=$(basename "${{ matrix.packages }}" .rb)" >> $GITHUB_ENV
