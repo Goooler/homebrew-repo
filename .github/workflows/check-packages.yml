@@ -41,9 +41,7 @@ jobs:
           PACKAGE_NAME="$(basename "${{ matrix.packages }}" .rb)"
           printf '\033[32m==> Auditing %s\033[0m\n' "$PACKAGE_NAME"
           brew audit --strict "$PACKAGE_NAME"
-          printf '\033[32m==> Installing %s\033[0m\n' "$PACKAGE_NAME"
           brew install "$PACKAGE_NAME"
-          printf '\033[32m==> Uninstalling %s\033[0m\n' "$PACKAGE_NAME"
           brew uninstall "$PACKAGE_NAME"
 
   # Status check that is required in branch protection rules.
