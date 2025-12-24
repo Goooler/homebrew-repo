@@ -20,5 +20,10 @@ cask "clash-mac" do
   desc "Lightweight Clash Menu Bar Client"
   homepage "https://github.com/666OS/ClashMac"
 
+  postflight do
+    # TODO: https://github.com/666OS/ClashMac/blob/main/README.md#solutions
+    system_command '/usr/bin/xattr', args: ['-cr', "#{appdir}/ClashMac.app"], sudo: false
+  end
+
   depends_on macos: ">= :big_sur"
 end
