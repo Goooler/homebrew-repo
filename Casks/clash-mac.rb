@@ -20,5 +20,13 @@ cask "clash-mac" do
   desc "Lightweight Clash Menu Bar Client"
   homepage "https://github.com/666OS/ClashMac"
 
+  postflight do
+    # Informative message for users during installation
+    puts "Run `xattr -cr /Applications/ClashMac.app` for the APP, see more details in https://github.com/666OS/ClashMac/blob/main/README.md#solutions."
+
+    # TODO: https://github.com/666OS/ClashMac/blob/main/README.md#solutions
+    system_command '/usr/bin/xattr', args: ['-cr', "#{appdir}/ClashMac.app"], sudo: false
+  end
+
   depends_on macos: ">= :big_sur"
 end
