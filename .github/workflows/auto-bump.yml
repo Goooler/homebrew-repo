@@ -20,8 +20,8 @@ jobs:
       - name: Enum packages
         id: enum-packages
         run: |
-          formulae=$(ls Formula/*.rb 2>/dev/null | xargs -n1 basename -s .rb | xargs)
-          casks=$(ls Casks/*.rb 2>/dev/null | xargs -n1 basename -s .rb | xargs)
+          formulae=$(find Formula -name "*.rb" -exec basename {} .rb \; | xargs echo)
+          casks=$(find Casks -name "*.rb" -exec basename {} .rb \; | xargs echo)
           echo "formulae: $formulae"
           echo "casks: $casks"
           echo "formulae=$formulae" >> $GITHUB_OUTPUT
