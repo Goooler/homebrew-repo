@@ -17,15 +17,6 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - uses: Homebrew/actions/setup-homebrew@main
-      - name: Enum packages
-        id: enum-packages
-        run: |
-          formulae=$(ls Formula/*.rb 2>/dev/null | xargs -n1 basename -s .rb | xargs)
-          casks=$(ls Casks/*.rb 2>/dev/null | xargs -n1 basename -s .rb | xargs)
-          echo "formulae: $formulae"
-          echo "casks: $casks"
-          echo "formulae=$formulae" >> $GITHUB_OUTPUT
-          echo "casks=$casks" >> $GITHUB_OUTPUT
       - uses: actions/create-github-app-token@v2
         id: app-token
         with:
@@ -35,8 +26,6 @@ jobs:
         with:
           fork: false
           token: ${{ steps.app-token.outputs.token }}
-          formulae: ${{ steps.enum-packages.outputs.formulae }}
-          casks: ${{ steps.enum-packages.outputs.casks }}
       - name: Merge PRs
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
