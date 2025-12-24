@@ -39,7 +39,7 @@ jobs:
       - name: Check Package
         run: |
           PACKAGE_NAME="$(basename "${{ matrix.packages }}" .rb)"
-          echo "Auditing $PACKAGE_NAME"
+          echo "==> Auditing $PACKAGE_NAME"
           brew audit --strict "$PACKAGE_NAME"
           echo "Installing $PACKAGE_NAME"
           brew install "$PACKAGE_NAME"
