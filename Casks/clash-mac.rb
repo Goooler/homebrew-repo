@@ -1,15 +1,15 @@
 cask "clash-mac" do
-  version "1.1.24"
+  version "1.1.25"
 
   on_arm do
-    sha256 "5e996c2cd498da63bc008af207627c2e620fef8417cca3a34bf992f61850e5e3"
+    sha256 "acf81e90468fa982eafcb4e2d908f74f57fd8bf4a5d44ebce65ab5638948d31d"
 
     url "https://github.com/666OS/ClashMac/releases/download/v#{version}/ClashMac-v#{version}-macos-arm64.zip"
 
     app "ClashMac-v#{version}-macos-arm64/ClashMac.app"
   end
   on_intel do
-    sha256 "0c217f9fede29b965a9dcc13f47f18b46dbf82e370e583a3fac734148c5b52f1"
+    sha256 "df7bcb889d94d8bafd29adfd152d39248c398f32d086c5ed125ba9c31fd954fb"
 
     url "https://github.com/666OS/ClashMac/releases/download/v#{version}/ClashMac-v#{version}-macos-x86_64.zip"
 
