@@ -7,38 +7,35 @@ on:
   pull_request:
 
 jobs:
-  changed-packages:
+  generate-matrix:
     runs-on: ubuntu-latest
     outputs:
-      matrix: ${{ steps.changed-files.outputs.all_changed_files }}
+      matrix: ${{ steps.generate-matrix.outputs.matrix }}
     steps:
       - uses: actions/checkout@v6
-      - uses: tj-actions/changed-files@v47
-        id: changed-files
-        with:
-          files: '**/*.rb'
-          matrix: true
-      - name: List all changed files
-        run: echo '${{ steps.changed-files.outputs.all_changed_files }}'
+      - uses: Homebrew/actions/setup-homebrew@main
+      - name: Generate CI matrix
+        id: generate-matrix
+        env:
+          PULL_REQUEST_URL: ${{ github.event.pull_request.url }}
+        run: |
+          brew generate-cask-ci-matrix --url "$PULL_REQUEST_URL"
 
   verify-packages:
     needs:
-      - changed-packages
-    if: ${{ needs.changed-packages.outputs.matrix != '[]' }}
+      - generate-matrix
+    name: ${{ matrix.name }}
     strategy:
       fail-fast: false
       matrix:
-        packages: ${{ fromJSON(needs.changed-packages.outputs.matrix) }}
-        os: # https://docs.github.com/en/actions/using-github-hosted-runners/using-github-hosted-runners/about-github-hosted-runners#standard-github-hosted-runners-for-public-repositories
-          - macos-latest # Based on arm64.
-          - macos-15-intel # Based on x64.
-    runs-on: ${{ matrix.os }}
+        include: ${{ fromJson(needs.generate-matrix.outputs.matrix) }}
+    runs-on: ${{ matrix.runner }}
     steps:
       - uses: actions/checkout@v6
       - uses: Homebrew/actions/setup-homebrew@main
       - name: Check Package
         run: |
-          PACKAGE_NAME="$(basename "${{ matrix.packages }}" .rb)"
+          PACKAGE_NAME="${{ matrix.cask }}"
           printf "\033[32m==>\033[0m \033[1;30mAuditing\033[0m \033[1;32m%s\033[0m\n" "$PACKAGE_NAME"
           brew audit --strict "$PACKAGE_NAME"
           brew install "$PACKAGE_NAME"
@@ -47,7 +44,7 @@ jobs:
   # Status check that is required in branch protection rules.
   final-status:
     needs:
-      - changed-packages
+      - generate-matrix
       - verify-packages
     runs-on: ubuntu-latest
     if: always()
