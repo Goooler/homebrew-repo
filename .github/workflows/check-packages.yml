@@ -19,6 +19,7 @@ jobs:
         env:
           PULL_REQUEST_URL: ${{ github.event.pull_request.url }}
         run: |
+          brew tap-new Goooler/homebrew-repo
           brew generate-cask-ci-matrix --url "$PULL_REQUEST_URL"
 
   verify-packages:
