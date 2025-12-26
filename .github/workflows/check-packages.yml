@@ -8,7 +8,7 @@ on:
 
 jobs:
   generate-matrix:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     outputs:
       matrix: ${{ steps.generate-matrix.outputs.matrix }}
     steps:
