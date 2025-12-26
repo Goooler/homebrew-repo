@@ -18,8 +18,8 @@ jobs:
       - uses: actions/checkout@v6
       - name: Set up Git
         run: |
-          git config --global user.name 'BrewTestBot'
-          git config --global user.email '1589480+BrewTestBot@users.noreply.github.com'
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
       - uses: Homebrew/actions/setup-homebrew@main
       - name: Enum packages
         id: enum-packages
