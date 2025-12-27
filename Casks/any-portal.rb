@@ -6,6 +6,7 @@ cask "any-portal" do
   name "AnyPortal"
   desc "GUI for any portal"
   homepage "https://github.com/AnyPortal/AnyPortal"
+  release_url "https://github.com/AnyPortal/AnyPortal/releases/tag/v#{version}"
 
   app "AnyPortal.app"
 end

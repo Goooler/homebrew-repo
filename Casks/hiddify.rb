@@ -6,6 +6,7 @@ cask "hiddify" do
   name "Hiddify"
   desc "Multi-platform auto-proxy client"
   homepage "https://github.com/hiddify/hiddify-app"
+  release_url "https://github.com/hiddify/hiddify-app/releases/tag/v#{version}"
 
   app "Hiddify.app"
 end

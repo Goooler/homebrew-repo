@@ -13,6 +13,7 @@ cask "kotlin-explorer" do
   name "Kotlin Explorer"
   desc "Quickly and easily disassemble Kotlin code"
   homepage "https://github.com/romainguy/kotlin-explorer"
+  release_url "https://github.com/romainguy/kotlin-explorer/releases/tag/v#{version}"
 
   app "Kotlin Explorer.app"
 end

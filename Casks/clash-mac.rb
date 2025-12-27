@@ -19,6 +19,7 @@ cask "clash-mac" do
   name "ClashMac"
   desc "Lightweight Clash Menu Bar Client"
   homepage "https://github.com/666OS/ClashMac"
+  release_url "https://github.com/666OS/ClashMac/releases/tag/v#{version}"
 
   depends_on macos: ">= :big_sur"
 

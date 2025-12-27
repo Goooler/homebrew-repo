@@ -13,6 +13,7 @@ cask "clash-nyanpasu" do
   name "Clash Nyanpasu"
   desc "Clash GUI based on Tauri"
   homepage "https://github.com/libnyanpasu/clash-nyanpasu"
+  release_url "https://github.com/libnyanpasu/clash-nyanpasu/releases/tag/v#{version}"
 
   app "Clash Nyanpasu.app"
 end

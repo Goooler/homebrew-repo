@@ -19,6 +19,7 @@ cask "mihomo-sparkle" do
   name "Sparkle"
   desc "Another Mihomo GUI"
   homepage "https://github.com/xishang0128/sparkle"
+  release_url "https://github.com/xishang0128/sparkle/releases/tag/v#{version}"
 
   postflight do
     system_command "/usr/libexec/PlistBuddy", # TODO: https://github.com/xishang0128/sparkle/issues/28

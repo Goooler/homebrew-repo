@@ -15,6 +15,7 @@ cask "fl-clash" do
   name "FlClash"
   desc "Multi-platform proxy client based on ClashMeta"
   homepage "https://github.com/chen08209/FlClash"
+  release_url "https://github.com/chen08209/FlClash/releases/tag/v#{version}"
 
   app "FlClash.app"
 end
