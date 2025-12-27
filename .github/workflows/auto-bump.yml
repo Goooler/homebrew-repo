@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
         with:
-          ref: ${{ github.head_ref }} # Ensure the commit could be pushed to the correct branch.
+          fetch-depth: 0 # Ensure the commit could be pushed to the correct branch.
       - name: Set up Git
         run: |
           git config --global user.name 'github-actions[bot]'
@@ -29,6 +29,8 @@ jobs:
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
       - name: Update README and commit changes
         if: github.event_name == 'push' # Run this step after bump package PRs are merged.
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
         run: |
           python3 update_readme.py
           pipx install mdformat
