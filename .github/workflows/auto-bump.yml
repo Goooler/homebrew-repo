@@ -35,6 +35,7 @@ jobs:
           title: Update README package versions to the latest
           branch: actions/update-readme
           author: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
+          base: ${{ github.head_ref }}
           token: ${{ steps.app-token.outputs.token }}
       - name: Merge PRs
         if: github.event_name == 'pull_request' && github.actor == 'app/actionstokenprovider' # Run this after bump package PRs are created.
