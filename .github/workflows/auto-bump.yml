@@ -42,10 +42,8 @@ jobs:
           formulae: ${{ steps.enum-packages.outputs.formulae }}
           casks: ${{ steps.enum-packages.outputs.casks }}
       - name: Merge PRs
+        if: github.event_name == 'pull_request' && github.actor == 'app/actionstokenprovider'
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
-        # TODO: https://github.com/Homebrew/actions/issues/746
         run: |
-          for url in $(gh pr list --state open --author "app/actionstokenprovider" --json url --jq '.[].url'); do
-            gh pr merge "$url" --auto --squash
-          done
+          gh pr merge ${{ github.head_ref }} --auto --squash
