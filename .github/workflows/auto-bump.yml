@@ -25,12 +25,23 @@ jobs:
         with:
           app-id: ${{ secrets.APP_ID }}
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
+      - name: Update README package versions
+        run: |
+          python3 update_readme.py
+      - uses: peter-evans/create-pull-request@v8
+        if: github.event_name == 'push' # Run this step after bump package PRs are merged.
+        with:
+          commit-message: Update README package versions to the latest
+          title: Update README package versions to the latest
+          branch: actions/update-readme
+          author: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
+          token: ${{ steps.app-token.outputs.token }}
       - name: Merge PRs
         if: github.event_name == 'pull_request' && github.actor == 'app/actionstokenprovider' # Run this after bump package PRs are created.
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
         run: |
-          gh pr merge ${{ github.event.number }} --auto --squash
+          gh pr merge ${{ github.event.number }} --auto --rebase
       - name: Enum packages
         id: enum-packages
         run: |
