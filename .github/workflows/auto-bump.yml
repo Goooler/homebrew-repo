@@ -26,8 +26,6 @@ jobs:
   bump-packages:
     runs-on: ubuntu-latest
     needs: generate-token
-    env:
-      GH_TOKEN: ${{ needs.generate-token.outputs.token }}
     steps:
       - uses: actions/checkout@v6
       - name: Set up Git
