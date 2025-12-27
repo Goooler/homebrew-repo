@@ -61,4 +61,4 @@ jobs:
       - uses: actions/checkout@v6
       - name: Merge PRs
         run: |
-          gh pr merge ${{ github.head_ref }} --auto --squash
+          gh pr merge ${{ github.event.pull_request.number }} --auto --squash
