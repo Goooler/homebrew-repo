@@ -28,7 +28,6 @@ jobs:
           app-id: ${{ secrets.APP_ID }}
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
       - name: Update README and commit changes
-        if: github.event_name == 'push' # Run this step after bump package PRs are merged.
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
         run: |
