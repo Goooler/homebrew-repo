@@ -51,7 +51,7 @@ jobs:
 
   merge-pr:
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request' && github.actor == 'app/actionstokenprovider'
+    if: github.event_name == 'pull_request' # TODO: && github.actor == 'app/actionstokenprovider'
     needs:
       - bump-packages
       - generate-token
