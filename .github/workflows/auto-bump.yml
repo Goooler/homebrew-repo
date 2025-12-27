@@ -16,6 +16,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0 # Ensure the commit could be pushed to the correct branch.
       - name: Set up Git
         run: |
           git config --global user.name 'github-actions[bot]'
@@ -25,6 +27,22 @@ jobs:
         with:
           app-id: ${{ secrets.APP_ID }}
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
+      - name: Update README and commit changes
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          python3 update_readme.py
+          pipx install mdformat
+          pipx inject mdformat mdformat-gfm
+          mdformat README.md
+
+          git add README.md
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "Update README.md"
+          git push "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" HEAD:"${{ github.head_ref }}"
       - uses: Homebrew/actions/setup-homebrew@main
       - name: Enum packages
         id: enum-packages
