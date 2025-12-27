@@ -47,7 +47,7 @@ jobs:
       - uses: Homebrew/actions/bump-packages@main
         with:
           fork: false
-          token: ${{ steps.app-token.outputs.token }}
+          token: ${{ needs.generate-token.outputs.token }}
           formulae: ${{ steps.enum-packages.outputs.formulae }}
           casks: ${{ steps.enum-packages.outputs.casks }}
 
