@@ -11,7 +11,7 @@ on:
   pull_request:
 
 jobs:
-  bump:
+  bump-packages:
     if: github.event.repository.fork == false
     runs-on: ubuntu-latest
     steps:
@@ -20,6 +20,11 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+      - uses: actions/create-github-app-token@v2
+        id: app-token
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
       - uses: Homebrew/actions/setup-homebrew@main
       - name: Enum packages
         id: enum-packages
@@ -30,11 +35,6 @@ jobs:
           echo "casks: $casks"
           echo "formulae=$formulae" >> $GITHUB_OUTPUT
           echo "casks=$casks" >> $GITHUB_OUTPUT
-      - uses: actions/create-github-app-token@v2
-        id: app-token
-        with:
-          app-id: ${{ secrets.APP_ID }}
-          private-key: ${{ secrets.APP_PRIVATE_KEY }}
       - uses: Homebrew/actions/bump-packages@main
         with:
           fork: false
@@ -42,10 +42,8 @@ jobs:
           formulae: ${{ steps.enum-packages.outputs.formulae }}
           casks: ${{ steps.enum-packages.outputs.casks }}
       - name: Merge PRs
+        if: github.event_name == 'pull_request' && github.actor == 'app/actionstokenprovider' # Run this after bump package PRs are created.
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
-        # TODO: https://github.com/Homebrew/actions/issues/746
         run: |
-          for url in $(gh pr list --state open --author "app/actionstokenprovider" --json url --jq '.[].url'); do
-            gh pr merge "$url" --auto --squash
-          done
+          gh pr merge ${{ github.event.number }} --auto --squash
