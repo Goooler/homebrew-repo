@@ -55,10 +55,10 @@ jobs:
     needs:
       - bump-packages
       - generate-token
-    env:
-      GH_TOKEN: ${{ needs.generate-token.outputs.token }}
     steps:
       - uses: actions/checkout@v6
       - name: Merge PRs
+        env:
+          GH_TOKEN: ${{ needs.generate-token.outputs.token }}
         run: |
           gh pr merge ${{ github.event.number }} --auto --squash
