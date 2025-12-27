@@ -42,7 +42,6 @@ jobs:
           formulae: ${{ steps.enum-packages.outputs.formulae }}
           casks: ${{ steps.enum-packages.outputs.casks }}
       - name: Merge PRs
-        if: github.event_name != 'pull_request'
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
         # TODO: https://github.com/Homebrew/actions/issues/746
