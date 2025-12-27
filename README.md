@@ -1,11 +1,13 @@
 # Goooler's Homebrew Repo
 
-## Installation:
+## Installation
 
 ```sh
 brew tap Goooler/homebrew-repo
 brew install <name>
 ```
+
+## Available Packages
 
 | Package Name          | Project                                       |
 |-----------------------|-----------------------------------------------|
