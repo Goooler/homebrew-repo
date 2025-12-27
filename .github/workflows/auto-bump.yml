@@ -11,7 +11,7 @@ on:
   pull_request:
 
 jobs:
-  bump:
+  bump-packages:
     if: github.event.repository.fork == false
     runs-on: ubuntu-latest
     steps:
@@ -59,7 +59,7 @@ jobs:
           formulae: ${{ steps.enum-packages.outputs.formulae }}
           casks: ${{ steps.enum-packages.outputs.casks }}
       - name: Merge PRs
-        if: github.event_name == 'pull_request' && github.actor == 'app/actionstokenprovider'
+        if: github.event_name == 'pull_request' && github.actor == 'app/actionstokenprovider' # Run this after bump package PRs are created.
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
         run: |
