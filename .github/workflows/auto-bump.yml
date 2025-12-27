@@ -42,8 +42,8 @@ jobs:
             echo "No changes to commit."
             exit 0
           fi
-          git commit -m "Update README.md"
-          git push "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" HEAD:"${{ github.head_ref }}"
+          git commit -m "Update README to reflect current packages"
+          git push "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" HEAD:main
       - uses: Homebrew/actions/setup-homebrew@main
       - name: Enum packages
         id: enum-packages
