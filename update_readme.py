@@ -2,8 +2,12 @@ import os
 import re
 
 def parse_rb_file(file_path):
-    with open(file_path, 'r') as f:
-        content = f.read()
+    try:
+        with open(file_path, 'r') as f:
+            content = f.read()
+    except (OSError, IOError):
+        # If the file cannot be read, return safe defaults
+        return "unknown", ""
 
     # Extract version
     version_match = re.search(r"version\s+['\"]([^'\"]+)['\"]", content)
@@ -46,7 +50,7 @@ def parse_rb_file(file_path):
     return version, release_link
 
 def main():
-    base_dir = os.path.dirname('.')
+    base_dir = '.'
     packages = []
     for folder in ['Casks', 'Formula']:
         folder_path = os.path.join(base_dir, folder)
@@ -70,12 +74,16 @@ def main():
 
     # Update README.md
     readme_path = os.path.join(base_dir, 'README.md')
-    with open(readme_path, 'r') as f:
-        readme_content = f.read()
+    try:
+        with open(readme_path, 'r') as f:
+            readme_content = f.read()
+    except (OSError, IOError) as e:
+        print(f"Error reading README.md: {e}")
+        return
 
     # Replace the section under ## Available Packages
     # We look for ## Available Packages and replace everything after it until the next header or end of file
-    pattern = r'(## Available Packages\n\n).*?(?=\n##|$)'
+    pattern = r'(## Available Packages\n\n).*?(?=\n+##|\s*$)'
     new_readme = re.sub(
         pattern,
         f'\\1{table}',
@@ -83,8 +91,12 @@ def main():
         flags=re.DOTALL
     )
 
-    with open(readme_path, 'w') as f:
-        f.write(new_readme)
+    try:
+        with open(readme_path, 'w') as f:
+            f.write(new_readme)
+    except (OSError, IOError) as e:
+        print(f"Error writing README.md: {e}")
+        return
 
 if __name__ == "__main__":
     main()
