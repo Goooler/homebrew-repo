@@ -85,7 +85,7 @@ def main():
     # Update README.md
     readme_path = os.path.join(base_dir, 'README.md')
     try:
-        with open(readme_path, 'r') as f:
+        with open(readme_path, 'r', encoding='utf-8') as f:
             readme_content = f.read()
     except OSError as e:
         print(f"Error reading README.md: {e}")
@@ -105,7 +105,7 @@ def main():
     new_readme = new_readme.rstrip() + '\n'
 
     try:
-        with open(readme_path, 'w') as f:
+        with open(readme_path, 'w', encoding='utf-8') as f:
             f.write(new_readme)
     except OSError as e:
         print(f"Error writing README.md: {e}")
