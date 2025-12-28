@@ -39,7 +39,6 @@ def parse_rb_file(file_path):
     if repo_match:
         repo_path = repo_match.group(1).rstrip('/')
         repo_url = f"https://github.com/{repo_path}"
-        
         # If version is unknown, link to latest release
         if version == "unknown":
             release_link = f"{repo_url}/releases/latest"
