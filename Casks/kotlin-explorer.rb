@@ -5,7 +5,8 @@ cask 'kotlin-explorer' do
   sha256 arm:   'ec7a3e74b9abc475c75f0fbca4f0bd7fef864e41d9f110061e79dc21434059e7',
          intel: '8687415794c00d65af4d7262d4b07deb82e747121d77d0c6172df93eb60f7fb4'
 
-  url "https://github.com/romainguy/kotlin-explorer/releases/download/v#{version}/kotlin-explorer-#{arch}-#{version}.dmg"
+  url "https://github.com/romainguy/kotlin-explorer/releases/download/v#{version}/kotlin-explorer-#{arch}-#{version}.dmg",
+      verified: 'github.com/romainguy/kotlin-explorer/'
   name 'Kotlin Explorer'
   desc 'Quickly and easily disassemble Kotlin code'
   homepage 'https://github.com/romainguy/kotlin-explorer'

@@ -5,7 +5,8 @@ cask 'clash-mac' do
   sha256 arm:   '5bd58c3e399775ffb50c365269ed0703240dd3f3bd2e365f55de5b9f150e0bd8',
          intel: 'a28ac2810c3041b27d051c698cc90b47c08f0eb930aba6205709958ec77f65ae'
 
-  url "https://github.com/666OS/ClashMac/releases/download/v#{version}/ClashMac-v#{version}-macos-#{arch}.zip"
+  url "https://github.com/666OS/ClashMac/releases/download/v#{version}/ClashMac-v#{version}-macos-#{arch}.zip",
+      verified: 'github.com/666OS/ClashMac/'
   name 'ClashMac'
   desc 'Lightweight Clash Menu Bar Client'
   homepage 'https://github.com/666OS/ClashMac'
