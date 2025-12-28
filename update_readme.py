@@ -73,11 +73,11 @@ def main():
     table = "| Package Name | Version |\n|--------------|---------|\n"
     for name, version, link in packages:
         if link:
+            # Always use a markdown link when a release URL is available; use "latest" as link text
+            # when the version is unknown so we don't claim a specific version number.
             if version == "unknown":
-                # Use markdown link with placeholder text for unknown versions
                 table += f"| `{name}` | [latest]({link}) |\n"
             else:
-                # Use markdown link for known versions
                 table += f"| `{name}` | [{version}]({link}) |\n"
         else:
             table += f"| `{name}` | {version} |\n"
