@@ -83,7 +83,7 @@ def main():
 
     # Replace the section under ## Available Packages
     # We look for ## Available Packages and replace everything after it until the next header or end of file
-    pattern = r'(## Available Packages\n\n).*?(?=\n+##|\s*$)'
+    pattern = r'(## Available Packages\n\n).*?(?=\n##|$)'
     new_readme = re.sub(
         pattern,
         f'\\1{table}',
