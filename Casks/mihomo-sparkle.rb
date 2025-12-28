@@ -10,6 +10,11 @@ cask 'mihomo-sparkle' do
   desc 'Another Mihomo GUI'
   homepage 'https://github.com/xishang0128/sparkle'
 
+  livecheck do
+    url :url
+    strategy :github_latest
+  end
+
   pkg "sparkle-macos-#{version}-#{arch}.pkg"
 
   postflight do

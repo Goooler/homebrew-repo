@@ -10,5 +10,10 @@ cask 'clash-nyanpasu' do
   desc 'Clash GUI based on Tauri'
   homepage 'https://github.com/libnyanpasu/clash-nyanpasu'
 
+  livecheck do
+    url :url
+    strategy :github_latest
+  end
+
   app 'Clash Nyanpasu.app'
 end

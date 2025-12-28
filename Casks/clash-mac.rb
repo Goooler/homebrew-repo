@@ -10,6 +10,11 @@ cask 'clash-mac' do
   desc 'Lightweight Clash Menu Bar Client'
   homepage 'https://github.com/666OS/ClashMac'
 
+  livecheck do
+    url :url
+    strategy :github_latest
+  end
+
   depends_on macos: '>= :big_sur'
 
   app "ClashMac-v#{version}-macos-#{arch}/ClashMac.app"

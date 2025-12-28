@@ -10,5 +10,10 @@ cask 'fl-clash' do
   desc 'Multi-platform proxy client based on ClashMeta'
   homepage 'https://github.com/chen08209/FlClash'
 
+  livecheck do
+    url :url
+    strategy :github_latest
+  end
+
   app 'FlClash.app'
 end
