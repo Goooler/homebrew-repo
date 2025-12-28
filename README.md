@@ -19,4 +19,3 @@ brew install <name>
 | `kotlin-explorer` | [1.6.6](https://github.com/romainguy/kotlin-explorer/releases/tag/v1.6.6) |
 | `mihomo-sparkle` | [1.6.16](https://github.com/xishang0128/sparkle/releases/tag/1.6.16) |
 | `string-res-exporter` | [0.2.4](https://github.com/Goooler/StringResExporter/releases/tag/v0.2.4) |
-

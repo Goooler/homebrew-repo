@@ -71,6 +71,9 @@ def main():
             table += f"| `{name}` | [{version}]({link}) |\n"
         else:
             table += f"| `{name}` | {version} |\n"
+    
+    # Remove trailing newline from table
+    table = table.rstrip('\n')
 
     # Update README.md
     readme_path = os.path.join(base_dir, 'README.md')
@@ -90,6 +93,9 @@ def main():
         readme_content,
         flags=re.DOTALL
     )
+    
+    # Strip trailing whitespace/newlines from the entire README
+    new_readme = new_readme.rstrip() + '\n'
 
     try:
         with open(readme_path, 'w') as f:
