@@ -37,13 +37,18 @@ def parse_rb_file(file_path):
     if repo_match:
         repo_path = repo_match.group(1).rstrip('/')
         repo_url = f"https://github.com/{repo_path}"
-        # Determine if tag has 'v' prefix
-        # Check if 'v#{version}' or 'v' + version is in the URL
-        if f'v{version}' in content or f'v#{{version}}' in content:
-            tag = f'v{version}'
+        
+        # If version is unknown, link to latest release
+        if version == "unknown":
+            release_link = f"{repo_url}/releases/latest"
         else:
-            tag = version
-        release_link = f"{repo_url}/releases/tag/{tag}"
+            # Determine if tag has 'v' prefix
+            # Check if 'v#{version}' or 'v' + version is in the URL
+            if f'v{version}' in content or f'v#{{version}}' in content:
+                tag = f'v{version}'
+            else:
+                tag = version
+            release_link = f"{repo_url}/releases/tag/{tag}"
     else:
         release_link = ""
 
@@ -68,7 +73,12 @@ def main():
     table = "| Package Name | Version |\n|--------------|---------|\n"
     for name, version, link in packages:
         if link:
-            table += f"| `{name}` | [{version}]({link}) |\n"
+            if version == "unknown":
+                # Use HTML anchor tag for unknown versions
+                table += f"| `{name}` | <a href=\"{link}\">unknown</a> |\n"
+            else:
+                # Use markdown link for known versions
+                table += f"| `{name}` | [{version}]({link}) |\n"
         else:
             table += f"| `{name}` | {version} |\n"
 
