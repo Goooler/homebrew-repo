@@ -6,7 +6,7 @@ def parse_rb_file(file_path):
         with open(file_path, 'r', encoding='utf-8') as f:
             content = f.read()
     except OSError:
-        # If the file cannot be read, return "unknown" version and empty link so the package is listed without a release link
+        # If the file cannot be read, return "unknown" version and empty link so that the package is listed without a release link
         return "unknown", ""
 
     # Extract version
