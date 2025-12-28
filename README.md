@@ -20,3 +20,15 @@ brew install <name>
 | `mihomo-sparkle` | [unknown](https://github.com/xishang0128/sparkle/releases/tag/unknown) |
 | `string-res-exporter` | unknown |
 
+## Development
+
+This repository includes scripts for running Homebrew development commands:
+
+- **Type Checking**: Run `./scripts/typecheck.sh` to verify types using Sorbet
+- **Style Linting**: Run `./scripts/style.sh` to lint and fix code formatting with RuboCop
+- **Testing**: Run `./scripts/tests.sh` to run RSpec unit tests
+
+See [scripts/README.md](scripts/README.md) for more details.
+
+All scripts can be run with the `brew-mcp-server`.
+
