@@ -3,7 +3,7 @@
 # Individual files/directories cannot be checked.
 # brew typecheck is fast enough to just be run globally every time.
 
-set -e
+set -eu
 
 echo "Running brew typecheck..."
 brew typecheck

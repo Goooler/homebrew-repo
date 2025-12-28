@@ -3,7 +3,7 @@
 # Individual files can be checked/fixed by passing them as arguments
 # e.g., brew style --fix Library/Homebrew/cmd/reinstall.rb
 
-set -e
+set -eu
 
 if [ $# -eq 0 ]; then
     echo "Running brew style --fix --changed..."

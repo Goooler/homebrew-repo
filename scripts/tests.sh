@@ -4,7 +4,7 @@
 # e.g., to test Library/Homebrew/cmd/reinstall.rb with Library/Homebrew/test/cmd/reinstall_spec.rb
 # run brew tests --only=cmd/reinstall
 
-set -e
+set -eu
 
 if [ $# -eq 0 ]; then
     echo "Running brew tests --online --changed..."
