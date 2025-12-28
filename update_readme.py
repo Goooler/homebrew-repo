@@ -32,7 +32,7 @@ def parse_rb_file(file_path):
     repo_match = re.search(r"homepage\s+['\"]https://github\.com/([^/]+/[^/'\"]+)['\"]", content)
     if not repo_match:
         # Try URL
-        repo_match = re.search(r"url\s+['\"]https://github\.com/([^/]+/[^/]+)/releases['\"]", content)
+        repo_match = re.search(r"url\s+['\"]https://github\.com/([^/]+/[^/]+)", content)
 
     if repo_match:
         repo_path = repo_match.group(1).rstrip('/')
@@ -90,7 +90,7 @@ def main():
         readme_content,
         flags=re.DOTALL
     )
-    
+
     # Strip trailing whitespace/newlines from the entire README
     new_readme = new_readme.rstrip() + '\n'
 
