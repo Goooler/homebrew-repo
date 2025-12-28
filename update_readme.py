@@ -71,9 +71,6 @@ def main():
             table += f"| `{name}` | [{version}]({link}) |\n"
         else:
             table += f"| `{name}` | {version} |\n"
-    
-    # Remove trailing newline from table
-    table = table.rstrip('\n')
 
     # Update README.md
     readme_path = os.path.join(base_dir, 'README.md')
