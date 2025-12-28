@@ -2,8 +2,14 @@ import os
 import re
 
 def parse_rb_file(file_path):
-    with open(file_path, 'r') as f:
-        content = f.read()
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+    except OSError as e:
+        # Log which file failed to be read for debugging purposes
+        print(f"Warning: Could not read {file_path}: {e}")
+        # If the file cannot be read, return "unknown" version and empty link so that the package is listed without a release link
+        return "unknown", ""
 
     # Extract version
     version_match = re.search(r"version\s+['\"]([^'\"]+)['\"]", content)
@@ -28,25 +34,29 @@ def parse_rb_file(file_path):
     repo_match = re.search(r"homepage\s+['\"]https://github\.com/([^/]+/[^/'\"]+)['\"]", content)
     if not repo_match:
         # Try URL
-        repo_match = re.search(r"url\s+['\"]https://github\.com/([^/]+/[^/]+)/releases['\"]", content)
+        repo_match = re.search(r"url\s+['\"]https://github\.com/([^/]+/[^/]+?)(?=/|['\"])", content)
 
     if repo_match:
         repo_path = repo_match.group(1).rstrip('/')
         repo_url = f"https://github.com/{repo_path}"
-        # Determine if tag has 'v' prefix
-        # Check if 'v#{version}' or 'v' + version is in the URL
-        if f'v{version}' in content or f'v#{{version}}' in content:
-            tag = f'v{version}'
+        # If version is unknown, link to latest release
+        if version == "unknown":
+            release_link = f"{repo_url}/releases/latest"
         else:
-            tag = version
-        release_link = f"{repo_url}/releases/tag/{tag}"
+            # Determine if tag has 'v' prefix
+            # Check if 'v#{version}' or 'v' + version is in the URL
+            if f'v{version}' in content or f'v#{{version}}' in content:
+                tag = f'v{version}'
+            else:
+                tag = version
+            release_link = f"{repo_url}/releases/tag/{tag}"
     else:
         release_link = ""
 
     return version, release_link
 
 def main():
-    base_dir = os.path.dirname('.')
+    base_dir = '.'
     packages = []
     for folder in ['Casks', 'Formula']:
         folder_path = os.path.join(base_dir, folder)
@@ -64,14 +74,23 @@ def main():
     table = "| Package Name | Version |\n|--------------|---------|\n"
     for name, version, link in packages:
         if link:
-            table += f"| `{name}` | [{version}]({link}) |\n"
+            # Always use a markdown link when a release URL is available; use "latest" as link text
+            # when the version is unknown so we don't claim a specific version number.
+            if version == "unknown":
+                table += f"| `{name}` | [latest]({link}) |\n"
+            else:
+                table += f"| `{name}` | [{version}]({link}) |\n"
         else:
             table += f"| `{name}` | {version} |\n"
 
     # Update README.md
     readme_path = os.path.join(base_dir, 'README.md')
-    with open(readme_path, 'r') as f:
-        readme_content = f.read()
+    try:
+        with open(readme_path, 'r', encoding='utf-8') as f:
+            readme_content = f.read()
+    except OSError as e:
+        print(f"Error reading README.md: {e}")
+        return
 
     # Replace the section under ## Available Packages
     # We look for ## Available Packages and replace everything after it until the next header or end of file
@@ -83,8 +102,15 @@ def main():
         flags=re.DOTALL
     )
 
-    with open(readme_path, 'w') as f:
-        f.write(new_readme)
+    # Ensure README ends with exactly one newline
+    new_readme = new_readme.rstrip() + '\n'
+
+    try:
+        with open(readme_path, 'w', encoding='utf-8') as f:
+            f.write(new_readme)
+    except OSError as e:
+        print(f"Error writing README.md: {e}")
+        return
 
 if __name__ == "__main__":
     main()
