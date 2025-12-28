@@ -103,7 +103,7 @@ def main():
         flags=re.DOTALL
     )
 
-    # Strip trailing whitespace/newlines from the entire README
+    # Ensure README ends with exactly one newline
     new_readme = new_readme.rstrip() + '\n'
 
     try:
