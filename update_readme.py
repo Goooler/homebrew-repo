@@ -6,12 +6,12 @@ def parse_rb_file(file_path):
         content = f.read()
 
     # Extract version
-    version_match = re.search(r'version\s+"([^"]+)"', content)
+    version_match = re.search(r"version\s+['\"]([^'\"]+)['\"]", content)
     if version_match:
         version = version_match.group(1)
     else:
         # Try to extract from URL if version is not explicitly defined
-        url_match = re.search(r'url\s+"([^"]+)"', content)
+        url_match = re.search(r"url\s+['\"]([^'\"]+)['\"]", content)
         if url_match:
             url = url_match.group(1)
             # Common pattern: .../v0.2.4/... or .../0.2.4/...
@@ -25,13 +25,14 @@ def parse_rb_file(file_path):
 
     # Extract GitHub repo
     # Try homepage first
-    repo_match = re.search(r'homepage\s+"(https://github\.com/[^/]+/[^/"]+)"', content)
+    repo_match = re.search(r"homepage\s+['\"]https://github\.com/([^/]+/[^/'\"]+)['\"]", content)
     if not repo_match:
         # Try URL
-        repo_match = re.search(r'url\s+"(https://github\.com/[^/]+/[^/]+)/releases', content)
+        repo_match = re.search(r"url\s+['\"]https://github\.com/([^/]+/[^/]+)/releases", content)
 
     if repo_match:
-        repo_url = repo_match.group(1).rstrip('/')
+        repo_path = repo_match.group(1).rstrip('/')
+        repo_url = f"https://github.com/{repo_path}"
         # Determine if tag has 'v' prefix
         # Check if 'v#{version}' or 'v' + version is in the URL
         if f'v{version}' in content or f'v#{{version}}' in content:
