@@ -74,8 +74,8 @@ def main():
     for name, version, link in packages:
         if link:
             if version == "unknown":
-                # Use HTML anchor tag for unknown versions
-                table += f"| `{name}` | <a href=\"{link}\">unknown</a> |\n"
+                # Use markdown link with placeholder text for unknown versions
+                table += f"| `{name}` | [latest]({link}) |\n"
             else:
                 # Use markdown link for known versions
                 table += f"| `{name}` | [{version}]({link}) |\n"
