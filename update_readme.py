@@ -32,7 +32,7 @@ def parse_rb_file(file_path):
     repo_match = re.search(r"homepage\s+['\"]https://github\.com/([^/]+/[^/'\"]+)['\"]", content)
     if not repo_match:
         # Try URL
-        repo_match = re.search(r"url\s+['\"]https://github\.com/([^/]+/[^/]+)", content)
+        repo_match = re.search(r"url\s+['\"]https://github\.com/([^/]+/[^/]+?)(?=/|['\"])", content)
 
     if repo_match:
         repo_path = repo_match.group(1).rstrip('/')
