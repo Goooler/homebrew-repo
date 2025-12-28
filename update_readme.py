@@ -5,7 +5,7 @@ def parse_rb_file(file_path):
     try:
         with open(file_path, 'r') as f:
             content = f.read()
-    except (OSError, IOError):
+    except OSError:
         # If the file cannot be read, return safe defaults
         return "unknown", ""
 
@@ -77,7 +77,7 @@ def main():
     try:
         with open(readme_path, 'r') as f:
             readme_content = f.read()
-    except (OSError, IOError) as e:
+    except OSError as e:
         print(f"Error reading README.md: {e}")
         return
 
@@ -94,7 +94,7 @@ def main():
     try:
         with open(readme_path, 'w') as f:
             f.write(new_readme)
-    except (OSError, IOError) as e:
+    except OSError as e:
         print(f"Error writing README.md: {e}")
         return
 
