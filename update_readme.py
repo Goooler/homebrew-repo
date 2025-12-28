@@ -5,7 +5,9 @@ def parse_rb_file(file_path):
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
             content = f.read()
-    except OSError:
+    except OSError as e:
+        # Log which file failed to be read for debugging purposes
+        print(f"Warning: Could not read {file_path}: {e}")
         # If the file cannot be read, return "unknown" version and empty link so that the package is listed without a release link
         return "unknown", ""
 
