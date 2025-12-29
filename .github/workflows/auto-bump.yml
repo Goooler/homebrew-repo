@@ -30,7 +30,7 @@ jobs:
           app-id: ${{ secrets.APP_ID }}
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
       - name: Merge PRs
-        if: github.event_name == 'pull_request' && github.event.pull_request.user.login == 'actionstokenprovider[bot]' # Run this after bump package PRs are created.
+        if: github.event_name == 'pull_request' && github.triggering_actor == 'actionstokenprovider[bot]' # Run this after bump package PRs are created.
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
         run: |
