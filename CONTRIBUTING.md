@@ -208,13 +208,13 @@ Before auditing, ensure your cask or formula follows Homebrew's style convention
 
 ```sh
 # Check style for casks
-brew style --cask ./Casks/your-app-name.rb
+brew style ./Casks/your-app-name.rb
 
 # Check style for formulas
 brew style ./Formula/your-package-name.rb
 
 # Automatically fix style issues
-brew style --fix --cask ./Casks/your-app-name.rb
+brew style --fix ./Casks/your-app-name.rb
 brew style --fix ./Formula/your-package-name.rb
 ```
 
