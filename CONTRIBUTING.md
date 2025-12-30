@@ -226,27 +226,13 @@ the "Available Packages" section.
 **Template for a new package entry:**
 
 ```markdown
-| `your-package-name`   | [![Release](https://img.shields.io/github/v/release/OWNER/REPO)][your-package-name] |
+| `your-package-name` | [![Release](https://img.shields.io/github/v/release/OWNER/REPO)][your-package-name] |
 ```
 
 Then add the reference link at the bottom of the file (also in alphabetical order):
 
 ```markdown
 [your-package-name]: https://github.com/OWNER/REPO/releases/latest
-```
-
-**Example:** Adding a package called `example-app` from `https://github.com/example/example-app`:
-
-In the table (inserted between `clash-nyanpasu` and `fl-clash`):
-
-```markdown
-| `example-app`         | [![Release](https://img.shields.io/github/v/release/example/example-app)][example-app] |
-```
-
-At the bottom with other references (inserted between the `clash-nyanpasu` and `fl-clash` links):
-
-```markdown
-[example-app]: https://github.com/example/example-app/releases/latest
 ```
 
 **Important Notes:**
