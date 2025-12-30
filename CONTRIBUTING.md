@@ -2,6 +2,12 @@
 
 Thank you for your interest in contributing to this Homebrew tap! This guide will help you add new casks and formulas to the repository.
 
+> **Note for AI Agents**: This document serves as both the contributing guide and the agents guide (AGENTS.md) for this repository. AI agents should read and follow all instructions in this document when adding new casks or formulas. Pay special attention to:
+> - The reference files mentioned for each type of contribution
+> - The requirement to update README.md's Available Packages section
+> - The alphabetical ordering requirement for new entries
+> - Testing and validation steps before submission
+
 ## Table of Contents
 
 - [Getting Started](#getting-started)
@@ -10,6 +16,7 @@ Thank you for your interest in contributing to this Homebrew tap! This guide wil
   - [Architecture-Specific Packages](#architecture-specific-packages)
 - [Adding a New Formula](#adding-a-new-formula)
 - [Testing Your Changes](#testing-your-changes)
+- [Updating the README](#updating-the-readme)
 - [Submitting Your Contribution](#submitting-your-contribution)
 
 ## Getting Started
@@ -200,25 +207,67 @@ brew audit --cask --strict ./Casks/your-app-name.rb
 brew audit --strict ./Formula/your-package-name.rb
 ```
 
+## Updating the README
+
+**Important:** When you add a new cask or formula, you **must** update the `README.md` file to include your package in the "Available Packages" section.
+
+### Steps:
+
+1. Open `README.md` in your editor
+2. Locate the "Available Packages" table (starts around line 10)
+3. Add a new row for your package **in alphabetical order** by package name
+4. Follow the exact format of existing entries
+
+**Template for a new package entry:**
+```markdown
+| `your-package-name`   | [![Release](https://img.shields.io/github/v/release/OWNER/REPO)][your-package-name] |
+```
+
+Then add the reference link at the bottom of the file (also in alphabetical order):
+```markdown
+[your-package-name]: https://github.com/OWNER/REPO/releases/latest
+```
+
+**Example:** Adding a package called `example-app` from `https://github.com/example/example-app`:
+
+In the table (inserted between `clash-nyanpasu` and `fl-clash`):
+```markdown
+| `example-app`         | [![Release](https://img.shields.io/github/v/release/example/example-app)][example-app] |
+```
+
+At the bottom with other references (inserted between the `clash-nyanpasu` and `fl-clash` links):
+```markdown
+[example-app]: https://github.com/example/example-app/releases/latest
+```
+
+**Important Notes:**
+- Maintain alphabetical order in both the table and the reference links
+- Use backticks around the package name in the table: `` `package-name` ``
+- Ensure proper spacing and alignment to match existing entries
+- The package name should match the cask/formula filename (without the `.rb` extension)
+
 ## Submitting Your Contribution
 
-1. Commit your changes:
+1. Ensure you've updated `README.md` with your new package (see [Updating the README](#updating-the-readme))
+
+2. Commit your changes:
    ```sh
-   git add Casks/your-app-name.rb  # or Formula/your-package-name.rb
+   git add Casks/your-app-name.rb README.md  # or Formula/your-package-name.rb README.md
    git commit -m "Add your-app-name cask"  # or "Add your-package-name formula"
    ```
 
-2. Push to your fork:
+3. Push to your fork:
    ```sh
    git push origin add-<package-name>
    ```
 
-3. Open a Pull Request on GitHub with:
+4. Open a Pull Request on GitHub with:
    - A clear title describing what you're adding
    - A description including:
      - Link to the upstream project
      - Version being added
      - Testing performed (which macOS version and architecture)
+     - Confirmation that README.md has been updated
 
 ## Additional Resources
 
