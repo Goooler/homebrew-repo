@@ -70,13 +70,11 @@ cask "your-app-name" do
   sha256 arm:   "ARM64_SHA256_HASH",
          intel: "INTEL_SHA256_HASH"
 
+  app "YourApp-v#{version}-macos-#{arch}/YourApp.app"
   url "https://github.com/OWNER/REPO/releases/download/v#{version}/YourApp-v#{version}-macos-#{arch}.zip"
   name "Your App Name"
   desc "Brief description of your application"
   homepage "https://github.com/OWNER/REPO"
-
-  app "YourApp-v#{version}-macos-#{arch}/YourApp.app"
-
   zap trash: [
     "~/Library/Application Support/YourApp",
     "~/Library/Preferences/com.owner.yourapp.plist",
