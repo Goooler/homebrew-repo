@@ -7,7 +7,6 @@ cask "clash-mac" do
 
   app "ClashMac-v#{version}-macos-#{arch}/ClashMac.app"
   url "https://github.com/666OS/ClashMac/releases/download/v#{version}/ClashMac-v#{version}-macos-#{arch}.zip"
-
   name "ClashMac"
   desc "Lightweight Clash Menu Bar Client"
   homepage "https://github.com/666OS/ClashMac"

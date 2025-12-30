@@ -6,11 +6,10 @@ cask "mihomo-sparkle" do
          intel: "1dac90308dfe22b5ec8f60ef61fa9b2966e356e9384aa7788a5789e1d7936698"
 
   url "https://github.com/xishang0128/sparkle/releases/download/#{version}/sparkle-macos-#{version}-#{arch}.pkg"
+  pkg "sparkle-macos-#{version}-#{arch}.pkg"
   name "Sparkle"
   desc "Another Mihomo GUI"
   homepage "https://github.com/xishang0128/sparkle"
-
-  pkg "sparkle-macos-#{version}-#{arch}.pkg"
 
   postflight do
     system_command "/usr/libexec/PlistBuddy", # TODO: https://github.com/xishang0128/sparkle/issues/28
