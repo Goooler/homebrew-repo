@@ -1,8 +1,11 @@
 # Contributing to Goooler's Homebrew Repo
 
-Thank you for your interest in contributing to this Homebrew tap! This guide will help you add new casks and formulas to the repository.
+Thank you for your interest in contributing to this Homebrew tap! This guide will help you add new casks and formulas to
+the repository.
 
-> **Note for AI Agents**: This document serves as both the contributing guide and the agents guide (AGENTS.md) for this repository. AI agents should read and follow all instructions in this document when adding new casks or formulas. Pay special attention to:
+> **Note for AI Agents**: This document serves as both the contributing guide and the agents guide (AGENTS.md) for this
+> repository. AI agents should read and follow all instructions in this document when adding new casks or formulas. Pay
+> special attention to:
 > - The reference files mentioned for each type of contribution
 > - The requirement to update README.md's Available Packages section
 > - The alphabetical ordering requirement for new entries
@@ -14,11 +17,13 @@ Casks are used for macOS applications distributed as `.app` bundles, typically i
 
 ### Universal Package (Single Binary)
 
-If the application provides a **single universal binary** that works on both Apple Silicon and Intel Macs, use this format.
+If the application provides a **single universal binary** that works on both Apple Silicon and Intel Macs, use this
+format.
 
 **Reference:** [`Casks/any-portal.rb`](Casks/any-portal.rb)
 
 **Template:**
+
 ```ruby
 cask "your-app-name" do
   version "1.0.0"
@@ -34,6 +39,7 @@ end
 ```
 
 **Steps:**
+
 1. Create a new file in the `Casks/` directory named `your-app-name.rb`
 2. Download the release file and calculate its SHA256 hash:
    ```sh
@@ -49,6 +55,7 @@ If the application provides **separate packages for Apple Silicon (arm64) and In
 **Reference:** [`Casks/clash-mac.rb`](Casks/clash-mac.rb)
 
 **Template:**
+
 ```ruby
 cask "your-app-name" do
   arch arm: "arm64", intel: "x86_64"
@@ -76,6 +83,7 @@ end
 ```
 
 **Steps:**
+
 1. Create a new file in the `Casks/` directory named `your-app-name.rb`
 2. Download both ARM64 and Intel release files
 3. Calculate SHA256 hashes for both architectures:
@@ -84,10 +92,12 @@ end
    shasum -a 256 /path/to/your-app-intel.zip
    ```
 4. Fill in the template with version, URLs, SHA256 hashes, and app details
-5. **Important:** Adjust both the `url` and `app` paths to match how the upstream project names their releases and structures their archives
+5. **Important:** Adjust both the `url` and `app` paths to match how the upstream project names their releases and
+   structures their archives
 6. Test on both architectures if possible (see [Testing Your Changes](#testing-your-changes))
 
 **Important Notes:**
+
 - The `arch` variable maps to the appropriate architecture string used in download URLs
 - Customize the `arch` mapping if the upstream project uses different naming conventions
 - The `postflight` block is optional and should only be used if special installation steps are required
@@ -97,9 +107,11 @@ end
 
 Formulas are used for command-line tools and software that doesn't come in a `.app` bundle.
 
-**Reference:** [`Formula/string-res-exporter.rb`](Formula/string-res-exporter.rb) and [Homebrew Official Formula Documentation](https://docs.brew.sh/Formula-Cookbook)
+**Reference:** [`Formula/string-res-exporter.rb`](Formula/string-res-exporter.rb)
+and [Homebrew Official Formula Documentation](https://docs.brew.sh/Formula-Cookbook)
 
 **Template:**
+
 ```ruby
 class YourPackageName < Formula
   desc "Brief description of the tool"
@@ -131,6 +143,7 @@ end
 ```
 
 **Steps:**
+
 1. Create a new file in the `Formula/` directory named `your-package-name.rb`
 2. The class name should be the package name in CamelCase:
    - Hyphens and underscores are removed and the following character is capitalized
@@ -148,6 +161,7 @@ end
 Before submitting your contribution, test your cask or formula locally:
 
 ### Testing a Cask
+
 ```sh
 # Install the cask from your local tap
 brew install --cask ./Casks/your-app-name.rb
@@ -160,6 +174,7 @@ brew uninstall --cask your-app-name
 ```
 
 ### Testing a Formula
+
 ```sh
 # Install the formula from your local tap
 brew install ./Formula/your-package-name.rb
@@ -175,6 +190,7 @@ brew uninstall your-package-name
 ```
 
 ### Audit Your Cask or Formula
+
 ```sh
 # For casks
 brew audit --cask --strict ./Casks/your-app-name.rb
@@ -185,7 +201,8 @@ brew audit --strict ./Formula/your-package-name.rb
 
 ## Updating the README
 
-**Important:** When you add a new cask or formula, you **must** update the `README.md` file to include your package in the "Available Packages" section.
+**Important:** When you add a new cask or formula, you **must** update the `README.md` file to include your package in
+the "Available Packages" section.
 
 ### Steps:
 
@@ -195,11 +212,13 @@ brew audit --strict ./Formula/your-package-name.rb
 4. Follow the exact format of existing entries
 
 **Template for a new package entry:**
+
 ```markdown
 | `your-package-name`   | [![Release](https://img.shields.io/github/v/release/OWNER/REPO)][your-package-name] |
 ```
 
 Then add the reference link at the bottom of the file (also in alphabetical order):
+
 ```markdown
 [your-package-name]: https://github.com/OWNER/REPO/releases/latest
 ```
@@ -207,16 +226,19 @@ Then add the reference link at the bottom of the file (also in alphabetical orde
 **Example:** Adding a package called `example-app` from `https://github.com/example/example-app`:
 
 In the table (inserted between `clash-nyanpasu` and `fl-clash`):
+
 ```markdown
 | `example-app`         | [![Release](https://img.shields.io/github/v/release/example/example-app)][example-app] |
 ```
 
 At the bottom with other references (inserted between the `clash-nyanpasu` and `fl-clash` links):
+
 ```markdown
 [example-app]: https://github.com/example/example-app/releases/latest
 ```
 
 **Important Notes:**
+
 - Maintain alphabetical order in both the table and the reference links
 - Use backticks around the package name in the table: `` `package-name` ``
 - Ensure proper spacing and alignment to match existing entries
