@@ -202,6 +202,22 @@ brew test your-package-name
 brew uninstall your-package-name
 ```
 
+### Check and Fix Code Style
+
+Before auditing, ensure your cask or formula follows Homebrew's style conventions:
+
+```sh
+# Check style for casks
+brew style ./Casks/your-app-name.rb
+
+# Check style for formulas
+brew style ./Formula/your-package-name.rb
+
+# Automatically fix style issues
+brew style --fix ./Casks/your-app-name.rb
+brew style --fix ./Formula/your-package-name.rb
+```
+
 ### Audit Your Cask or Formula
 
 ```sh
