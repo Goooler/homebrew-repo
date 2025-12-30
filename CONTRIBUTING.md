@@ -8,30 +8,6 @@ Thank you for your interest in contributing to this Homebrew tap! This guide wil
 > - The alphabetical ordering requirement for new entries
 > - Testing and validation steps before submission
 
-## Table of Contents
-
-- [Getting Started](#getting-started)
-- [Adding a New Cask](#adding-a-new-cask)
-  - [Universal Package (Single Binary)](#universal-package-single-binary)
-  - [Architecture-Specific Packages](#architecture-specific-packages)
-- [Adding a New Formula](#adding-a-new-formula)
-- [Testing Your Changes](#testing-your-changes)
-- [Updating the README](#updating-the-readme)
-- [Submitting Your Contribution](#submitting-your-contribution)
-
-## Getting Started
-
-1. Fork this repository
-2. Clone your fork locally:
-   ```sh
-   git clone https://github.com/YOUR_USERNAME/homebrew-repo.git
-   cd homebrew-repo
-   ```
-3. Create a new branch for your contribution:
-   ```sh
-   git checkout -b add-<package-name>
-   ```
-
 ## Adding a New Cask
 
 Casks are used for macOS applications distributed as `.app` bundles, typically in `.dmg` or `.pkg` format.
