@@ -229,7 +229,7 @@ At the bottom with other references (inserted between the `clash-nyanpasu` and `
 2. Commit your changes:
    ```sh
    git add Casks/your-app-name.rb README.md  # or Formula/your-package-name.rb README.md
-   git commit -m "Add your-app-name cask"  # or "Add your-package-name formula"
+   git commit -m "Add your-app-name cask" -m "Your cask project link" # or "Add your-package-name formula"
    ```
 
 3. Push to your fork:
@@ -237,13 +237,7 @@ At the bottom with other references (inserted between the `clash-nyanpasu` and `
    git push origin add-<package-name>
    ```
 
-4. Open a Pull Request on GitHub with:
-   - A clear title describing what you're adding
-   - A description including:
-     - Link to the upstream project
-     - Version being added
-     - Testing performed (which macOS version and architecture)
-     - Confirmation that README.md has been updated
+4. Open a Pull Request on GitHub.
 
 ## Additional Resources
 
