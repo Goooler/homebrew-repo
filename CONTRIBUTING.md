@@ -74,12 +74,12 @@ cask "your-app-name" do
   sha256 arm:   "ARM64_SHA256_HASH",
          intel: "INTEL_SHA256_HASH"
 
-  url "https://github.com/OWNER/REPO/releases/download/v#{version}/your-app-macos-#{arch}.zip"
+  url "https://github.com/OWNER/REPO/releases/download/v#{version}/YourApp-v#{version}-macos-#{arch}.zip"
   name "Your App Name"
   desc "Brief description of your application"
   homepage "https://github.com/OWNER/REPO"
 
-  app "YourApp.app"
+  app "YourApp-v#{version}-macos-#{arch}/YourApp.app"
 
   # Optional: Add minimum macOS version requirement
   depends_on macos: ">= :monterey"
@@ -101,7 +101,7 @@ end
    shasum -a 256 /path/to/your-app-intel.zip
    ```
 4. Fill in the template with version, URLs, SHA256 hashes, and app details
-5. Adjust the URL pattern to match how the upstream project names their releases
+5. **Important:** Adjust both the `url` and `app` paths to match how the upstream project names their releases and structures their archives
 6. Test on both architectures if possible (see [Testing Your Changes](#testing-your-changes))
 
 **Important Notes:**
@@ -149,7 +149,9 @@ end
 
 **Steps:**
 1. Create a new file in the `Formula/` directory named `your-package-name.rb`
-2. The class name should be the package name in CamelCase (e.g., `string-res-exporter` → `StringResExporter`)
+2. The class name should be the package name in CamelCase:
+   - Hyphens and underscores are removed and the following character is capitalized
+   - Examples: `string-res-exporter` → `StringResExporter`, `package_name` → `PackageName`
 3. Calculate the SHA256 hash of the release file:
    ```sh
    shasum -a 256 /path/to/package.tar.gz
