@@ -35,6 +35,12 @@ cask "your-app-name" do
   homepage "https://github.com/OWNER/REPO"
 
   app "YourApp.app"
+
+  zap trash: [
+    "~/Library/Application Support/YourApp",
+    "~/Library/Preferences/com.owner.yourapp.plist",
+    "~/Library/Saved Application State/com.owner.yourapp.savedState",
+  ]
 end
 ```
 
@@ -70,6 +76,12 @@ cask "your-app-name" do
   homepage "https://github.com/OWNER/REPO"
 
   app "YourApp-v#{version}-macos-#{arch}/YourApp.app"
+
+  zap trash: [
+    "~/Library/Application Support/YourApp",
+    "~/Library/Preferences/com.owner.yourapp.plist",
+    "~/Library/Saved Application State/com.owner.yourapp.savedState",
+  ]
 
   # Optional: Add minimum macOS version requirement
   depends_on macos: ">= :monterey"
@@ -127,10 +139,10 @@ class YourPackageName < Formula
     # For JAR files:
     libexec.install "your-package.jar"
     bin.write_jar_script libexec / "your-package.jar", "your-command"
-    
+
     # For binary executables:
     # bin.install "your-binary"
-    
+
     # For more complex builds, see Homebrew documentation
   end
 
