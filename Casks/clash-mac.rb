@@ -20,7 +20,7 @@ cask "clash-mac" do
   desc "Lightweight Clash Menu Bar Client"
   homepage "https://github.com/666OS/ClashMac"
 
-  depends_on macos: ">= :big_sur"
+  depends_on macos: ">= :monterey"
 
   postflight do
     # Informative message for users during installation
