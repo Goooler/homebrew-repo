@@ -86,7 +86,8 @@ cask "your-app-name" do
 
   # Optional: Add post-installation steps if needed
   postflight do
-    # Example: Remove quarantine attribute
+    # Example: Inform the user and remove quarantine attribute
+    puts "Removing quarantine attribute from YourApp.app..."
     system_command "/usr/bin/xattr", args: ["-cr", "#{appdir}/YourApp.app"], sudo: false
   end
 end
