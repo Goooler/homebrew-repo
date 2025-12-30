@@ -70,19 +70,15 @@ cask "your-app-name" do
   sha256 arm:   "ARM64_SHA256_HASH",
          intel: "INTEL_SHA256_HASH"
 
-  app "YourApp-v#{version}-macos-#{arch}/YourApp.app"
   url "https://github.com/OWNER/REPO/releases/download/v#{version}/YourApp-v#{version}-macos-#{arch}.zip"
   name "Your App Name"
   desc "Brief description of your application"
   homepage "https://github.com/OWNER/REPO"
-  zap trash: [
-    "~/Library/Application Support/YourApp",
-    "~/Library/Preferences/com.owner.yourapp.plist",
-    "~/Library/Saved Application State/com.owner.yourapp.savedState",
-  ]
 
   # Optional: Add minimum macOS version requirement
   depends_on macos: ">= :monterey"
+
+  app "YourApp-v#{version}-macos-#{arch}/YourApp.app"
 
   # Optional: Add post-installation steps if needed
   postflight do
@@ -90,6 +86,12 @@ cask "your-app-name" do
     puts "Removing quarantine attribute from YourApp.app..."
     system_command "/usr/bin/xattr", args: ["-cr", "#{appdir}/YourApp.app"], sudo: false
   end
+
+  zap trash: [
+    "~/Library/Application Support/YourApp",
+    "~/Library/Preferences/com.owner.yourapp.plist",
+    "~/Library/Saved Application State/com.owner.yourapp.savedState",
+  ]
 end
 ```
 
@@ -128,10 +130,10 @@ class YourPackageName < Formula
   desc "Brief description of the tool"
   homepage "https://github.com/OWNER/REPO"
   url "https://github.com/OWNER/REPO/releases/download/v1.0.0/package-1.0.0.tar.gz"
-  sha256 "YOUR_SHA256_HASH"
+  sha256 "your_sha256_hash"
 
   # Add dependencies if needed
-  depends_on "openjdk"  # Example dependency
+  depends_on "openjdk" # Example dependency
 
   def install
     # Installation steps vary by package type
