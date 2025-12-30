@@ -4,7 +4,7 @@ cask "compose-mesh" do
 
   url "https://github.com/c5inco/Mesh/releases/download/v#{version}/Mesh-#{version}.dmg"
   name "Mesh"
-  desc "Simple tool to create and edit mesh gradients"
+  desc "Compose Desktop application for creating and editing mesh gradients"
   homepage "https://github.com/c5inco/Mesh"
 
   app "Mesh.app"
