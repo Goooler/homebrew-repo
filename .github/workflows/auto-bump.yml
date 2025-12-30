@@ -45,9 +45,9 @@ jobs:
           echo "formulae=$formulae" >> $GITHUB_OUTPUT
           echo "casks=$casks" >> $GITHUB_OUTPUT
       - uses: Homebrew/actions/setup-homebrew@main
-      - name: Bump packages
-        env:
-          HOMEBREW_GITHUB_API_TOKEN: ${{ steps.app-token.outputs.token }}
-        run: |
-          brew bump --no-fork --open-pr --formulae ${{ steps.enum-packages.outputs.formulae }}
-          brew bump --no-fork --open-pr --casks ${{ steps.enum-packages.outputs.casks }}
+      - uses: Homebrew/actions/bump-packages@main
+        with:
+          fork: false
+          token: ${{ steps.app-token.outputs.token }}
+          formulae: ${{ steps.enum-packages.outputs.formulae }}
+          casks: ${{ steps.enum-packages.outputs.casks }}
