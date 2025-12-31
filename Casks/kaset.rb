@@ -4,7 +4,7 @@ cask "kaset" do
 
   url "https://github.com/sozercan/kaset/releases/download/v0.3.0/kaset-v0.3.0.dmg"
   name "Kaset"
-  desc "Native macOS YouTube Music client"
+  desc "Native YouTube Music client"
   homepage "https://github.com/sozercan/kaset"
 
   depends_on macos: ">= :tahoe"
