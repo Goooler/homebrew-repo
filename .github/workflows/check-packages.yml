@@ -32,6 +32,9 @@ jobs:
         os: # https://docs.github.com/en/actions/reference/runners/github-hosted-runners#standard-github-hosted-runners-for-public-repositories
           - macos-26 # Based on arm64.
           - macos-15-intel # Based on x64.
+        exclude:
+          - os: macos-15-intel
+            packages: Casks/kaset.rb # It requires macOS 26 or above.
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v6
