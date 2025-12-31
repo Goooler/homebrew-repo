@@ -13,9 +13,9 @@ cask "kaset" do
 
   postflight do
     # Informative message for users during installation
-    puts "Run `xattr -cr /Applications/Kaset.app` for the APP, see more details in https://github.com/sozercan/kaset?tab=readme-ov-file#homebrew."
+    puts "Run `xattr -cr /Applications/Kaset.app` for the APP, see more details in https://github.com/sozercan/kaset/blob/main/README.md#homebrew."
 
-    # TODO: https://github.com/666OS/ClashMac/blob/main/README.md#solutions
+    # TODO: https://github.com/sozercan/kaset/blob/main/README.md#homebrew
     system_command "/usr/bin/xattr", args: ["-cr", "#{appdir}/Kaset.app"], sudo: false
   end
 
