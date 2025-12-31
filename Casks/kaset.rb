@@ -16,7 +16,7 @@ cask "kaset" do
     puts "Run `xattr -cr /Applications/Kaset.app` for the APP, see more details in https://github.com/sozercan/kaset?tab=readme-ov-file#homebrew."
 
     # TODO: https://github.com/666OS/ClashMac/blob/main/README.md#solutions
-    system_command "/usr/bin/xattr", args: ["-cr", "#{appdir}/ClashMac.app"], sudo: false
+    system_command "/usr/bin/xattr", args: ["-cr", "#{appdir}/Kaset.app"], sudo: false
   end
 
   zap trash: [
