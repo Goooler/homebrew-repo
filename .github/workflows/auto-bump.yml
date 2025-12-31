@@ -41,8 +41,8 @@ jobs:
           echo "formulae=$formulae" >> $GITHUB_OUTPUT
           echo "casks=$casks" >> $GITHUB_OUTPUT
       - uses: Homebrew/actions/setup-homebrew@main
-      - name: Brew Doctor
-        run: brew doctor
+      - name: Brew Config
+        run: brew config
       - uses: Homebrew/actions/bump-packages@main
         with:
           fork: false
