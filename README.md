@@ -29,8 +29,8 @@ brew install <name>
 [clash-nyanpasu]: https://github.com/libnyanpasu/clash-nyanpasu/releases/latest
 [compose-mesh]: https://github.com/c5inco/Mesh/releases/latest
 [fl-clash]: https://github.com/chen08209/FlClash/releases/latest
-[kaset]: https://github.com/sozercan/kaset/releases/latest
 [hiddify]: https://github.com/hiddify/hiddify-app/releases/latest
+[kaset]: https://github.com/sozercan/kaset/releases/latest
 [kotlin-explorer]: https://github.com/romainguy/kotlin-explorer/releases/latest
 [mihomo-sparkle]: https://github.com/xishang0128/sparkle/releases/latest
 [string-res-exporter]: https://github.com/Goooler/StringResExporter/releases/latest
