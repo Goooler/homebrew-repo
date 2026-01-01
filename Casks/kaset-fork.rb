@@ -1,17 +1,11 @@
 cask "kaset-fork" do
   version "0.3.0"
-  sha256 "b165ea9212854858b81945defb22fe051bbd020e5a651230870e040131f0d8d3"
+  sha256 "96ae05bb967ce0875b4312a12ebfc892ae6aedcddfbca7f54ce34ef991957519"
 
-  url "https://github.com/notnotrachit/kaset/releases/download/v#{version}%28MacOS-15%29/Kaset.dmg"
+  url "https://github.com/Goooler/kaset/releases/download/v#{version}/kaset-v#{version}.dmg"
   name "Kaset Fork"
   desc "Native YouTube Music client (fork)"
   homepage "https://github.com/notnotrachit/kaset"
-
-  livecheck do
-    url :url
-    regex(/^v?(\d+(?:\.\d+)+)\(MacOS-\d+\)$/i)
-    strategy :github_latest
-  end
 
   depends_on macos: ">= :sequoia"
 
