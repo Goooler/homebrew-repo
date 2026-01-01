@@ -12,7 +12,6 @@ cask "kaset-fork" do
   livecheck do
     url :url
     regex(/^v?(\d+(?:\.\d+)+)\(MacOS-\d+\)$/i)
-    strategy :github_latest
   end
 
   app "Kaset.app"
