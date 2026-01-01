@@ -7,13 +7,13 @@ cask "kaset-fork" do
   desc "Native YouTube Music client (fork)"
   homepage "https://github.com/notnotrachit/kaset"
 
-  depends_on macos: ">= :sequoia"
-
   livecheck do
     url :url
     regex(/^v?(\d+(?:\.\d+)+)\(MacOS-\d+\)$/i)
     strategy :github_latest
   end
+
+  depends_on macos: ">= :sequoia"
 
   app "Kaset.app"
 
