@@ -2,7 +2,7 @@ cask "kaset-fork" do
   version "0.3.0"
   sha256 "b165ea9212854858b81945defb22fe051bbd020e5a651230870e040131f0d8d3"
 
-  url "https://github.com/notnotrachit/kaset/releases/download/v#{version}(MacOS-15)/Kaset.dmg"
+  url "https://github.com/notnotrachit/kaset/releases/download/v#{version}%28MacOS-15%29/Kaset.dmg"
   name "Kaset Fork"
   desc "Native YouTube Music client (fork)"
   homepage "https://github.com/notnotrachit/kaset"
@@ -13,7 +13,7 @@ cask "kaset-fork" do
 
   postflight do
     # Informative message for users during installation
-    puts "Run `xattr -cr /Applications/Kaset.app` for the APP, see more details in https://github.com/notnotrachit/kaset/blob/main/README.md#homebrew."
+    puts "Run `xattr -cr /Applications/Kaset.app` to remove quarantine attribute."
 
     system_command "/usr/bin/xattr", args: ["-cr", "#{appdir}/Kaset.app"], sudo: false
   end
