@@ -13,7 +13,7 @@ cask "kaset-fork" do
 
   postflight do
     # Informative message for users during installation
-    puts "Run `xattr -cr /Applications/Kaset.app` to remove quarantine attribute."
+    puts "Run `xattr -cr /Applications/Kaset.app` for the APP, see more details in https://github.com/sozercan/kaset/blob/main/README.md#homebrew."
 
     system_command "/usr/bin/xattr", args: ["-cr", "#{appdir}/Kaset.app"], sudo: false
   end
