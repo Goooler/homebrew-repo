@@ -13,7 +13,7 @@ cask "mihomo-sparkle" do
   pkg "sparkle-macos-#{version}-#{arch}.pkg"
 
   postflight do
-    system_command "/usr/libexec/PlistBuddy", # TODO: https://github.com/xishang0128/sparkle/issues/28
+    system_command "/usr/libexec/PlistBuddy",
                    args: [
                      "-c", "Add :LSUIElement integer 1", # https://discussions.apple.com/thread/7444141
                      "/Applications/Sparkle.app/Contents/Info.plist"
