@@ -9,6 +9,12 @@ cask "kaset-fork" do
 
   depends_on macos: ">= :sequoia"
 
+  livecheck do
+    url :url
+    regex(/^v?(\d+(?:\.\d+)+)\(MacOS-\d+\)$/i)
+    strategy :github_latest
+  end
+
   app "Kaset.app"
 
   postflight do
