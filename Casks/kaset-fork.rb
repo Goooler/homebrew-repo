@@ -7,7 +7,7 @@ cask "kaset-fork" do
   desc "Native YouTube Music client (fork)"
   homepage "https://github.com/notnotrachit/kaset"
 
-  depends_on macos: ">= :tahoe"
+  depends_on macos: ">= :sequoia"
 
   app "Kaset.app"
 
