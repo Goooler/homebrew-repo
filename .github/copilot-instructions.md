@@ -1,7 +1,7 @@
 # GitHub Copilot Custom Instructions for Goooler's Homebrew Repo
 
 This is a Homebrew tap repository for macOS casks and formulas. When reviewing code or providing suggestions, follow the
-comprehensive guidelines in [CONTRIBUTING.md](../CONTRIBUTING.md).
+comprehensive guidelines in [CONTRIBUTING.md][CONTRIBUTING.md].
 
 ## Key Requirements
 
@@ -14,5 +14,9 @@ comprehensive guidelines in [CONTRIBUTING.md](../CONTRIBUTING.md).
 - **Reference files**: `Casks/any-portal.rb` (universal binary), `Casks/clash-mac.rb` (architecture-specific),
   `Formula/string-res-exporter.rb` (formula example)
 
-See [CONTRIBUTING.md](../CONTRIBUTING.md) for detailed requirements, templates, testing procedures, and common mistakes
+See [CONTRIBUTING.md][CONTRIBUTING.md] for detailed requirements, templates, testing procedures, and common mistakes
 to avoid.
+
+
+
+[CONTRIBUTING.md]: ../CONTRIBUTING.md
