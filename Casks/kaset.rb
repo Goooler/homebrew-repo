@@ -7,14 +7,12 @@ cask "kaset" do
   desc "Native YouTube Music client"
   homepage "https://github.com/sozercan/kaset"
 
-  depends_on macos: ">= :tahoe"
+  depends_on macos: ">= :sequoia"
 
   app "Kaset.app"
 
   postflight do
-    # Informative message for users during installation
-    puts "Run `xattr -cr /Applications/Kaset.app` for the APP, see more details in https://github.com/sozercan/kaset/blob/main/README.md#homebrew."
-
+    # Apply extended attribute fix automatically after installation
     system_command "/usr/bin/xattr", args: ["-cr", "#{appdir}/Kaset.app"], sudo: false
   end
 
