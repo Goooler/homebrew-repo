@@ -18,7 +18,7 @@ When reviewing code or making suggestions, ensure the following:
 
 2. **Alphabetical Ordering**: All entries must be in alphabetical order:
    - Package names in the README.md table
-   - Reference links in the README.md
+   - Reference links at the bottom of README.md
    - This is critical and must be verified
 
 3. **Style and Audit Checks**: All casks and formulas must pass:
@@ -33,7 +33,7 @@ When reviewing code or making suggestions, ensure the following:
 ### For Casks (macOS Applications)
 
 Reference files for examples:
-- **Universal binary**: `Casks/any-portal.rb` - single binary for both Apple Silicon and Intel
+- **Universal binary**: `Casks/any-portal.rb` - single universal binary for both Apple Silicon and Intel
 - **Architecture-specific**: `Casks/clash-mac.rb` - separate binaries for arm64 and x86_64
 
 Required elements in casks:
@@ -119,7 +119,7 @@ brew uninstall package-name
 
 ## Important Notes
 
-- The CONTRIBUTING.md file serves as both the contributing guide and agents guide (AGENTS.md)
+- The CONTRIBUTING.md file serves as both the contributing guide and the AI agents guide for this repository
 - Pay special attention to reference files mentioned for each type of contribution
 - Always verify alphabetical ordering - this is a hard requirement
 - SHA256 hashes must be calculated from actual download files, not guessed
