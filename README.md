@@ -18,7 +18,7 @@ brew install <name>
 | `fl-clash`            | [![Release](https://img.shields.io/github/v/release/chen08209/FlClash)][fl-clash]                    |
 | `hiddify`             | [![Release](https://img.shields.io/github/v/release/hiddify/hiddify-app)][hiddify]                   |
 | `kaset`               | [![Release](https://img.shields.io/github/v/release/sozercan/kaset)][kaset]                          |
-| `kaset-fork`          | [![Release](https://img.shields.io/github/v/release/Goooler/kaset)][kaset-fork]                 |
+| `kaset-fork`          | [![Release](https://img.shields.io/github/v/release/Goooler/kaset)][kaset-fork]                      |
 | `kotlin-explorer`     | [![Release](https://img.shields.io/github/v/release/romainguy/kotlin-explorer)][kotlin-explorer]     |
 | `mihomo-sparkle`      | [![Release](https://img.shields.io/github/v/release/xishang0128/sparkle)][mihomo-sparkle]            |
 | `string-res-exporter` | [![Release](https://img.shields.io/github/v/release/Goooler/StringResExporter)][string-res-exporter] |
