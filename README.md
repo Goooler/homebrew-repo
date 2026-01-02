@@ -1,5 +1,7 @@
 # Goooler's Homebrew Repo
 
+![Icon](.idea/icon.svg)
+
 ## Installation
 
 ```sh
