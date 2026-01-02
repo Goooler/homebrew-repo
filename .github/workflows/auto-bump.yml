@@ -31,19 +31,10 @@ jobs:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
         run: |
           gh pr merge ${{ github.event.number }} --auto --rebase
-      - name: Enum packages
-        id: enum-packages
-        run: |
-          formulae=$(find Formula -name "*.rb" -exec basename {} .rb \; | xargs echo)
-          casks=$(find Casks -name "*.rb" -exec basename {} .rb \; | xargs echo)
-          echo "formulae: $formulae"
-          echo "casks: $casks"
-          echo "formulae=$formulae" >> $GITHUB_OUTPUT
-          echo "casks=$casks" >> $GITHUB_OUTPUT
       - uses: Homebrew/actions/setup-homebrew@main
-      - uses: Homebrew/actions/bump-packages@main
-        with:
-          fork: false
-          token: ${{ steps.app-token.outputs.token }}
-          formulae: ${{ steps.enum-packages.outputs.formulae }}
-          casks: ${{ steps.enum-packages.outputs.casks }}
+      - name: Bump packages
+        env:
+          HOMEBREW_GITHUB_API_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          brew bump --no-fork --open-pr --casks --tap=Goooler/repo
+          brew bump --no-fork --open-pr --formulae --tap=Goooler/repo
