@@ -12,7 +12,6 @@ brew install <name>
 | Package Name          | Latest Version                                                                                       |
 |-----------------------|------------------------------------------------------------------------------------------------------|
 | `any-portal`          | [![Release](https://img.shields.io/github/v/release/AnyPortal/AnyPortal)][any-portal]                |
-| `clash-mac`           | [![Release](https://img.shields.io/github/v/release/666OS/ClashMac)][clash-mac]                      |
 | `clash-nyanpasu`      | [![Release](https://img.shields.io/github/v/release/libnyanpasu/clash-nyanpasu)][clash-nyanpasu]     |
 | `compose-mesh`        | [![Release](https://img.shields.io/github/v/release/c5inco/Mesh)][compose-mesh]                      |
 | `fl-clash`            | [![Release](https://img.shields.io/github/v/release/chen08209/FlClash)][fl-clash]                    |
