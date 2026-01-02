@@ -7,6 +7,10 @@ on:
   pull_request:
 
 jobs:
+  auto-bump:
+    uses: ./.github/workflows/auto-bump.yml
+    secrets: inherit # https://docs.github.com/en/actions/how-tos/reuse-automations/reuse-workflows#passing-secrets-to-nested-workflows
+
   changed-packages:
     runs-on: ubuntu-latest
     outputs:
@@ -59,6 +63,7 @@ jobs:
   # Status check that is required in branch protection rules.
   final-status:
     needs:
+      - auto-bump
       - changed-packages
       - verify-packages
     runs-on: ubuntu-latest
