@@ -7,7 +7,10 @@ comprehensive guidelines in [CONTRIBUTING.md](../CONTRIBUTING.md).
 
 - **Every new cask or formula MUST update README.md** with the package in alphabetical order
 - **All entries must maintain strict alphabetical ordering** (package names and reference links)
-- **All contributions must pass Homebrew style and audit checks** (`brew style --fix` and `brew audit --strict`)
+- **All contributions must pass Homebrew checks:**
+  - `brew style`
+  - `brew audit --strict`
+  - `brew install` and `brew uninstall`
 - **Reference files**: `Casks/any-portal.rb` (universal binary), `Casks/clash-mac.rb` (architecture-specific),
   `Formula/string-res-exporter.rb` (formula example)
 
