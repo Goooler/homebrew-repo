@@ -44,7 +44,7 @@ jobs:
           PACKAGE_NAME="$(basename "${{ matrix.packages }}" .rb)"
 
           README_FILE="README.md"
-          if ! grep -qi -w -- "\`$PACKAGE_NAME\`" "$README_FILE"; then
+          if ! grep -qi -- "\`$PACKAGE_NAME\`" "$README_FILE"; then
             echo "Package \`$PACKAGE_NAME\` not found in \`$README_FILE\`"
             exit 1
           fi
