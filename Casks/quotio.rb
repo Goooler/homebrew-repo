@@ -11,7 +11,7 @@ cask "quotio" do
 
   postflight do
     # Informative message for users during installation
-    puts "Run `xattr -cr /Applications/Kaset.app` for the APP, see more details in https://github.com/nguyenphutrong/quotio/blob/master/README.md#download."
+    puts "Run `xattr -cr /Applications/Quotio.app` for the APP, see more details in https://github.com/nguyenphutrong/quotio/blob/master/README.md#download."
 
     system_command "/usr/bin/xattr", args: ["-cr", "#{appdir}/Quotio.app"], sudo: false
   end
