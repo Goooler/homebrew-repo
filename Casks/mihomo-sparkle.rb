@@ -22,4 +22,13 @@ cask "mihomo-sparkle" do
   end
 
   uninstall pkgutil: "com.xishang0128.sparkle"
+
+  zap trash: [
+    "~/Library/Application Support/Sparkle",
+    "~/Library/Caches/com.xishang0128.sparkle",
+    "~/Library/Logs/Sparkle",
+    "~/Library/Preferences/com.xishang0128.sparkle.plist",
+    "~/Library/Saved Application State/com.xishang0128.sparkle.savedState",
+    "~/Library/WebKit/com.xishang0128.sparkle",
+  ]
 end

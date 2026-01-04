@@ -11,4 +11,13 @@ cask "clash-nyanpasu" do
   homepage "https://github.com/libnyanpasu/clash-nyanpasu"
 
   app "Clash Nyanpasu.app"
+
+  zap trash: [
+    "~/Library/Application Support/com.libnyanpasu.clash-nyanpasu",
+    "~/Library/Caches/com.libnyanpasu.clash-nyanpasu",
+    "~/Library/Logs/com.libnyanpasu.clash-nyanpasu",
+    "~/Library/Preferences/com.libnyanpasu.clash-nyanpasu.plist",
+    "~/Library/Saved Application State/com.libnyanpasu.clash-nyanpasu.savedState",
+    "~/Library/WebKit/com.libnyanpasu.clash-nyanpasu",
+  ]
 end

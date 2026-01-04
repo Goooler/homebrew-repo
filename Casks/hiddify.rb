@@ -8,4 +8,12 @@ cask "hiddify" do
   homepage "https://github.com/hiddify/hiddify-app"
 
   app "Hiddify.app"
+
+  zap trash: [
+    "~/Library/Application Support/com.hiddify.macos",
+    "~/Library/Caches/com.hiddify.macos",
+    "~/Library/Logs/Hiddify",
+    "~/Library/Preferences/com.hiddify.macos.plist",
+    "~/Library/Saved Application State/com.hiddify.macos.savedState",
+  ]
 end

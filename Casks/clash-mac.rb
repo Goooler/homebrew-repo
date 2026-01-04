@@ -20,4 +20,12 @@ cask "clash-mac" do
 
     system_command "/usr/bin/xattr", args: ["-cr", "#{appdir}/ClashMac.app"], sudo: false
   end
+
+  zap trash: [
+    "~/Library/Application Support/ClashMac",
+    "~/Library/Caches/com.666os.ClashMac",
+    "~/Library/Logs/ClashMac",
+    "~/Library/Preferences/com.666os.ClashMac.plist",
+    "~/Library/Saved Application State/com.666os.ClashMac.savedState",
+  ]
 end

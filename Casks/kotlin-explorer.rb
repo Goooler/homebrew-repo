@@ -11,4 +11,11 @@ cask "kotlin-explorer" do
   homepage "https://github.com/romainguy/kotlin-explorer"
 
   app "Kotlin Explorer.app"
+
+  zap trash: [
+    "~/Library/Application Support/Kotlin Explorer",
+    "~/Library/Caches/com.romainguy.kotlin-explorer",
+    "~/Library/Preferences/com.romainguy.kotlin-explorer.plist",
+    "~/Library/Saved Application State/com.romainguy.kotlin-explorer.savedState",
+  ]
 end
