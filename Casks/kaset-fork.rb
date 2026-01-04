@@ -20,6 +20,7 @@ cask "kaset-fork" do
 
   zap trash: [
     "~/Library/Application Support/Kaset",
+    "~/Library/Caches/com.kaset.imagecache",
     "~/Library/Caches/com.sertacozercan.Kaset",
     "~/Library/Preferences/com.sertacozercan.Kaset.plist",
     "~/Library/Saved Application State/com.sertacozercan.Kaset.savedState",

@@ -20,6 +20,7 @@ cask "quotio" do
     "~/Library/Application Support/Quotio",
     "~/Library/Caches/com.nguyenphutrong.quotio",
     "~/Library/Preferences/com.nguyenphutrong.quotio.plist",
+    "~/Library/Preferences/proseek.io.vn.Quotio.plist",
     "~/Library/Saved Application State/com.nguyenphutrong.quotio.savedState",
     "~/Library/WebKit/com.nguyenphutrong.quotio",
   ]
