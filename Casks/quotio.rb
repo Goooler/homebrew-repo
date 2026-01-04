@@ -7,6 +7,8 @@ cask "quotio" do
   desc "Daily quotes and inspiration app"
   homepage "https://github.com/nguyenphutrong/quotio"
 
+  depends_on macos: ">= :sequoia"
+
   app "Quotio.app"
 
   postflight do
