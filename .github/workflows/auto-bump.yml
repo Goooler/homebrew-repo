@@ -9,7 +9,7 @@ on:
 
 jobs:
   bump-packages:
-    if: github.event.repository.fork == false
+    if: ${{ secrets.APP_ID != '' && secrets.APP_PRIVATE_KEY != '' }} # https://github.com/actions/create-github-app-token
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v6
