@@ -10,10 +10,9 @@ cask "hiddify" do
   app "Hiddify.app"
 
   zap trash: [
-    "~/Library/Application Support/com.hiddify.macos",
-    "~/Library/Caches/com.hiddify.macos",
-    "~/Library/Logs/Hiddify",
-    "~/Library/Preferences/com.hiddify.macos.plist",
-    "~/Library/Saved Application State/com.hiddify.macos.savedState",
+    "~/Library/Application Support/app.hiddify.com",
+    "~/Library/Caches/app.hiddify.com",
+    "~/Library/Preferences/app.hiddify.com.plist",
+    "~/Library/Saved Application State/app.hiddify.com.savedState",
   ]
 end

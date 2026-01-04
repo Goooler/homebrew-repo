@@ -22,10 +22,12 @@ cask "clash-mac" do
   end
 
   zap trash: [
-    "~/Library/Application Support/ClashMac",
-    "~/Library/Caches/com.666os.ClashMac",
+    "~/Library/Application Support/clashmac",
+    "~/Library/Caches/app.clashmac.ClashMacDashboard",
+    "~/Library/Caches/lv.llv.ClashMac",
     "~/Library/Logs/ClashMac",
-    "~/Library/Preferences/com.666os.ClashMac.plist",
-    "~/Library/Saved Application State/com.666os.ClashMac.savedState",
+    "~/Library/Preferences/app.clashmac.ClashMacDashboard.plist",
+    "~/Library/Preferences/lv.llv.ClashMac.plist",
+    "~/Library/Saved Application State/lv.llv.ClashMac.savedState",
   ]
 end

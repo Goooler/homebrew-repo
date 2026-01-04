@@ -13,11 +13,10 @@ cask "clash-nyanpasu" do
   app "Clash Nyanpasu.app"
 
   zap trash: [
-    "~/Library/Application Support/com.libnyanpasu.clash-nyanpasu",
-    "~/Library/Caches/com.libnyanpasu.clash-nyanpasu",
-    "~/Library/Logs/com.libnyanpasu.clash-nyanpasu",
-    "~/Library/Preferences/com.libnyanpasu.clash-nyanpasu.plist",
-    "~/Library/Saved Application State/com.libnyanpasu.clash-nyanpasu.savedState",
-    "~/Library/WebKit/com.libnyanpasu.clash-nyanpasu",
+    "~/Library/Application Support/Clash Nyanpasu",
+    "~/Library/Caches/moe.elaina.clash.nyanpasu",
+    "~/Library/Preferences/moe.elaina.clash.nyanpasu.plist",
+    "~/Library/Saved Application State/moe.elaina.clash.nyanpasu.savedState",
+    "~/Library/WebKit/moe.elaina.clash.nyanpasu",
   ]
 end

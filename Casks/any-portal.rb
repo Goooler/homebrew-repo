@@ -10,9 +10,8 @@ cask "any-portal" do
   app "AnyPortal.app"
 
   zap trash: [
-    "~/Library/Application Support/AnyPortal",
-    "~/Library/Caches/com.anyportal.AnyPortal",
-    "~/Library/Preferences/com.anyportal.AnyPortal.plist",
-    "~/Library/Saved Application State/com.anyportal.AnyPortal.savedState",
+    "~/Library/Caches/com.github.anyportal.anyportal",
+    "~/Library/Preferences/com.github.anyportal.anyportal.plist",
+    "~/Library/Saved Application State/com.github.anyportal.anyportal.savedState",
   ]
 end
