@@ -29,5 +29,6 @@ cask "clash-mac" do
     "~/Library/Preferences/app.clashmac.ClashMacDashboard.plist",
     "~/Library/Preferences/lv.llv.ClashMac.plist",
     "~/Library/Saved Application State/lv.llv.ClashMac.savedState",
+    "~/Library/WebKit/lv.llv.ClashMac",
   ]
 end
