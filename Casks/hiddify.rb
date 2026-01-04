@@ -8,4 +8,11 @@ cask "hiddify" do
   homepage "https://github.com/hiddify/hiddify-app"
 
   app "Hiddify.app"
+
+  zap trash: [
+    "~/Library/Application Support/app.hiddify.com",
+    "~/Library/Caches/app.hiddify.com",
+    "~/Library/Preferences/app.hiddify.com.plist",
+    "~/Library/Saved Application State/app.hiddify.com.savedState",
+  ]
 end

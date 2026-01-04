@@ -8,4 +8,10 @@ cask "any-portal" do
   homepage "https://github.com/AnyPortal/AnyPortal"
 
   app "AnyPortal.app"
+
+  zap trash: [
+    "~/Library/Caches/com.github.anyportal.anyportal",
+    "~/Library/Preferences/com.github.anyportal.anyportal.plist",
+    "~/Library/Saved Application State/com.github.anyportal.anyportal.savedState",
+  ]
 end

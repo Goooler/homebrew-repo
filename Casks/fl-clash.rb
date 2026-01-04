@@ -11,4 +11,13 @@ cask "fl-clash" do
   homepage "https://github.com/chen08209/FlClash"
 
   app "FlClash.app"
+
+  zap trash: [
+    "~/Library/Application Support/com.follow.clash",
+    "~/Library/Caches/com.follow.clash",
+    "~/Library/Logs/com.follow.clash",
+    "~/Library/Preferences/com.follow.clash.plist",
+    "~/Library/Saved Application State/com.follow.clash.savedState",
+    "~/Library/WebKit/com.follow.clash",
+  ]
 end

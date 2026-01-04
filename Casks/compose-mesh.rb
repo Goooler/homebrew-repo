@@ -8,4 +8,11 @@ cask "compose-mesh" do
   homepage "https://github.com/c5inco/Mesh"
 
   app "Mesh.app"
+
+  zap trash: [
+    "~/Library/Application Support/Mesh",
+    "~/Library/Caches/com.c5inco.Mesh",
+    "~/Library/Preferences/com.c5inco.Mesh.plist",
+    "~/Library/Saved Application State/com.c5inco.Mesh.savedState",
+  ]
 end
