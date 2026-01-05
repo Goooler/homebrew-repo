@@ -28,10 +28,17 @@ jobs:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
         run: |
           gh pr merge ${{ github.event.number }} --auto --rebase
-      - uses: Homebrew/actions/setup-homebrew@main
+      - name: Set up Homebrew Tap
+        run: |
+          brew update-reset "$(brew --repository)"
+          TAP_BASE=$(brew --taps)/${{ github.repository_owner }}
+          mkdir -p $TAP_BASE
+          ln -s $GITHUB_WORKSPACE $TAP_BASE/${{ github.event.repository.name }}
       - name: Bump packages
         env:
           HOMEBREW_GITHUB_API_TOKEN: ${{ steps.app-token.outputs.token }}
+          REPO: ${{ github.repository }}
         run: |
-          brew bump --no-fork --open-pr --casks --tap=Goooler/repo
-          brew bump --no-fork --open-pr --formulae --tap=Goooler/repo
+          echo "Bumping packages in tap: $REPO"
+          brew bump --no-fork --open-pr --casks --tap=$REPO
+          brew bump --no-fork --open-pr --formulae --tap=$REPO
