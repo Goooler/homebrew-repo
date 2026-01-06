@@ -7,7 +7,7 @@ cask "clash-mi" do
   desc "Another Mihomo GUI based on Flutter"
   homepage "https://github.com/KaringX/clashmi"
 
-  app "clashmi/Clash Mi.app"
+  app "Clash Mi.app"
 
   zap trash: [
     "~/Library/Application Support/clashmi",
