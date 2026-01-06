@@ -13,9 +13,6 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v6
-        with: # Ensure the full history is fetched for proper PR sending.
-          fetch-depth: 0
-          ref: ${{ github.ref }}
       - name: Set up Git
         run: |
           git config --global user.name 'github-actions[bot]'
