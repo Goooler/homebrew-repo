@@ -16,6 +16,7 @@ brew install <name>
 | `any-portal`          | [![Release](https://img.shields.io/github/v/release/AnyPortal/AnyPortal)][any-portal]                |
 | `clash-mac`           | [![Release](https://img.shields.io/github/v/release/666OS/ClashMac)][clash-mac]                      |
 | `clash-nyanpasu`      | [![Release](https://img.shields.io/github/v/release/libnyanpasu/clash-nyanpasu)][clash-nyanpasu]     |
+| `clashx-meta`         | [![Release](https://img.shields.io/github/v/release/MetaCubeX/ClashX.Meta)][clashx-meta]             |
 | `compose-mesh`        | [![Release](https://img.shields.io/github/v/release/c5inco/Mesh)][compose-mesh]                      |
 | `fl-clash`            | [![Release](https://img.shields.io/github/v/release/chen08209/FlClash)][fl-clash]                    |
 | `hiddify`             | [![Release](https://img.shields.io/github/v/release/hiddify/hiddify-app)][hiddify]                   |
@@ -31,6 +32,7 @@ brew install <name>
 [any-portal]: https://github.com/AnyPortal/AnyPortal/releases/latest
 [clash-mac]: https://github.com/666OS/ClashMac/releases/latest
 [clash-nyanpasu]: https://github.com/libnyanpasu/clash-nyanpasu/releases/latest
+[clashx-meta]: https://github.com/MetaCubeX/ClashX.Meta/releases/latest
 [compose-mesh]: https://github.com/c5inco/Mesh/releases/latest
 [fl-clash]: https://github.com/chen08209/FlClash/releases/latest
 [hiddify]: https://github.com/hiddify/hiddify-app/releases/latest
