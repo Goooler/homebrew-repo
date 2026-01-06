@@ -1,32 +1,18 @@
 cask "clash-mac" do
   arch arm: "arm64", intel: "x86_64"
 
-  on_monterey :or_older do
-    version "1.4.24"
-    sha256 arm:   "6d5d03caf51fcc4057de3e473db31ebb6cb91afd5d723b3262e0a1332f9a4e8e",
-           intel: "f8a48ef712cb8d37e643ba624b3b645080f34b9ae6433152c817073eb80a101a"
+  version "26.1"
+  sha256 arm:   "bfe19871e8e8a6fefb35b5d7f279939f01938da4602f6991ed9982207b8e511a",
+         intel: "7ebc21293a221ccaba58a9cf9ff8dd3a1537cef1905350ea2254e421952a775e"
 
-    url "https://github.com/666OS/ClashMac/releases/download/v#{version}/ClashMac-v#{version}-macos-#{arch}.zip"
-
-    livecheck do
-      skip "Legacy version"
-    end
-
-    app "ClashMac-v#{version}-macos-#{arch}/ClashMac.app"
-  end
-  on_ventura :or_newer do
-    version "26.1"
-    sha256 arm:   "bfe19871e8e8a6fefb35b5d7f279939f01938da4602f6991ed9982207b8e511a",
-           intel: "7ebc21293a221ccaba58a9cf9ff8dd3a1537cef1905350ea2254e421952a775e"
-
-    url "https://github.com/666OS/ClashMac/releases/download/#{version}/ClashMac-#{version}-macos-#{arch}.zip"
-
-    app "ClashMac-#{version}-macos-#{arch}/ClashMac.app"
-  end
-
+  url "https://github.com/666OS/ClashMac/releases/download/#{version}/ClashMac-#{version}-macos-#{arch}.zip"
   name "ClashMac"
   desc "Lightweight Clash Menu Bar Client"
   homepage "https://github.com/666OS/ClashMac"
+
+  depends_on macos: ">= :ventura"
+
+  app "ClashMac-#{version}-macos-#{arch}/ClashMac.app"
 
   postflight do
     # Informative message for users during installation
