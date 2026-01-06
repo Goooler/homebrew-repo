@@ -10,7 +10,7 @@ cask "clash-mac" do
 
     app "ClashMac-v#{version}-macos-#{arch}/ClashMac.app"
   end
-  on_tahoe :or_newer do
+  on_ventura :or_newer do
     version "26.0"
     sha256 arm:   "1e00a2e4c5cad4a24a650a090b72bc780beab1cf2692b7e40f8b6248c8c46a5f",
            intel: "7d875aa55639bbe924bc3f3dda0f982b1b9ce087d3a82bef363459ab0d01b3f0"
