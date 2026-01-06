@@ -7,11 +7,6 @@ cask "clashx-meta" do
   desc "Rule-based custom proxy with GUI based on Clash.Meta"
   homepage "https://github.com/MetaCubeX/ClashX.Meta"
 
-  livecheck do
-    url :url
-    strategy :github_latest
-  end
-
   depends_on macos: ">= :monterey"
 
   app "ClashX Meta.app"
