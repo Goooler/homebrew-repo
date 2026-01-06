@@ -1,7 +1,7 @@
 cask "clash-mac" do
   arch arm: "arm64", intel: "x86_64"
 
-  on_sequoia :or_older do
+  on_monterey :or_older do
     version "1.4.24"
     sha256 arm:   "6d5d03caf51fcc4057de3e473db31ebb6cb91afd5d723b3262e0a1332f9a4e8e",
            intel: "f8a48ef712cb8d37e643ba624b3b645080f34b9ae6433152c817073eb80a101a"
@@ -14,7 +14,7 @@ cask "clash-mac" do
 
     app "ClashMac-v#{version}-macos-#{arch}/ClashMac.app"
   end
-  on_tahoe :or_newer do
+  on_ventura :or_newer do
     version "26.0"
     sha256 arm:   "1e00a2e4c5cad4a24a650a090b72bc780beab1cf2692b7e40f8b6248c8c46a5f",
            intel: "7d875aa55639bbe924bc3f3dda0f982b1b9ce087d3a82bef363459ab0d01b3f0"
@@ -27,8 +27,6 @@ cask "clash-mac" do
   name "ClashMac"
   desc "Lightweight Clash Menu Bar Client"
   homepage "https://github.com/666OS/ClashMac"
-
-  depends_on macos: ">= :monterey"
 
   postflight do
     # Informative message for users during installation
