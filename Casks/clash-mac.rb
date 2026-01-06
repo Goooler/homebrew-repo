@@ -15,9 +15,9 @@ cask "clash-mac" do
     app "ClashMac-v#{version}-macos-#{arch}/ClashMac.app"
   end
   on_ventura :or_newer do
-    version "26.0"
-    sha256 arm:   "1e00a2e4c5cad4a24a650a090b72bc780beab1cf2692b7e40f8b6248c8c46a5f",
-           intel: "7d875aa55639bbe924bc3f3dda0f982b1b9ce087d3a82bef363459ab0d01b3f0"
+    version "26.1"
+    sha256 arm:   "bfe19871e8e8a6fefb35b5d7f279939f01938da4602f6991ed9982207b8e511a",
+           intel: "7ebc21293a221ccaba58a9cf9ff8dd3a1537cef1905350ea2254e421952a775e"
 
     url "https://github.com/666OS/ClashMac/releases/download/#{version}/ClashMac-#{version}-macos-#{arch}.zip"
 
