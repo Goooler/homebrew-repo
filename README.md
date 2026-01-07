@@ -25,7 +25,6 @@ brew install <name>
 | `kaset-fork`          | [![Release](https://img.shields.io/github/v/release/Goooler/kaset)][kaset-fork]                      |
 | `kotlin-explorer`     | [![Release](https://img.shields.io/github/v/release/romainguy/kotlin-explorer)][kotlin-explorer]     |
 | `mihomo-sparkle`      | [![Release](https://img.shields.io/github/v/release/xishang0128/sparkle)][mihomo-sparkle]            |
-| `quotio`              | [![Release](https://img.shields.io/github/v/release/nguyenphutrong/quotio)][quotio]                  |
 | `string-res-exporter` | [![Release](https://img.shields.io/github/v/release/Goooler/StringResExporter)][string-res-exporter] |
 
 
@@ -42,5 +41,4 @@ brew install <name>
 [kaset-fork]: https://github.com/Goooler/kaset/releases/latest
 [kotlin-explorer]: https://github.com/romainguy/kotlin-explorer/releases/latest
 [mihomo-sparkle]: https://github.com/xishang0128/sparkle/releases/latest
-[quotio]: https://github.com/nguyenphutrong/quotio/releases/latest
 [string-res-exporter]: https://github.com/Goooler/StringResExporter/releases/latest
