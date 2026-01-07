@@ -7,6 +7,9 @@ cask "quotio" do
   desc "Daily quotes and inspiration app"
   homepage "https://github.com/nguyenphutrong/quotio"
 
+  deprecate! date:    "2026-01-07",
+             because: "has moved to the upstream tap at https://github.com/nguyenphutrong/homebrew-tap"
+
   depends_on macos: ">= :sequoia"
 
   app "Quotio.app"
