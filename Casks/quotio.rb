@@ -8,7 +8,7 @@ cask "quotio" do
   homepage "https://github.com/nguyenphutrong/quotio"
 
   deprecate! date:    "2026-01-07",
-             because: "Maintained by the upstream for now. See https://github.com/nguyenphutrong/homebrew-tap"
+             because: "has moved to the upstream tap at https://github.com/nguyenphutrong/homebrew-tap"
 
   depends_on macos: ">= :sequoia"
 
