@@ -23,7 +23,6 @@ brew install <name>
 | `kaset`               | [![Release](https://img.shields.io/github/v/release/sozercan/kaset)][kaset]                          |
 | `kaset-fork`          | [![Release](https://img.shields.io/github/v/release/Goooler/kaset)][kaset-fork]                      |
 | `kotlin-explorer`     | [![Release](https://img.shields.io/github/v/release/romainguy/kotlin-explorer)][kotlin-explorer]     |
-| `quotio`              | [![Release](https://img.shields.io/github/v/release/nguyenphutrong/quotio)][quotio]                  |
 | `string-res-exporter` | [![Release](https://img.shields.io/github/v/release/Goooler/StringResExporter)][string-res-exporter] |
 
 
@@ -38,5 +37,4 @@ brew install <name>
 [kaset]: https://github.com/sozercan/kaset/releases/latest
 [kaset-fork]: https://github.com/Goooler/kaset/releases/latest
 [kotlin-explorer]: https://github.com/romainguy/kotlin-explorer/releases/latest
-[quotio]: https://github.com/nguyenphutrong/quotio/releases/latest
 [string-res-exporter]: https://github.com/Goooler/StringResExporter/releases/latest
