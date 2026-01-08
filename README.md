@@ -13,7 +13,6 @@ brew install <name>
 
 | Package Name          | Latest Version                                                                                       |
 |-----------------------|------------------------------------------------------------------------------------------------------|
-| `any-portal`          | [![Release](https://img.shields.io/github/v/release/AnyPortal/AnyPortal)][any-portal]                |
 | `clash-mac`           | [![Release](https://img.shields.io/github/v/release/666OS/ClashMac)][clash-mac]                      |
 | `clash-mi`            | [![Release](https://img.shields.io/github/v/release/KaringX/clashmi)][clash-mi]                      |
 | `clashx-meta`         | [![Release](https://img.shields.io/github/v/release/MetaCubeX/ClashX.Meta)][clashx-meta]             |
@@ -26,7 +25,6 @@ brew install <name>
 
 
 
-[any-portal]: https://github.com/AnyPortal/AnyPortal/releases/latest
 [clash-mac]: https://github.com/666OS/ClashMac/releases/latest
 [clash-mi]: https://github.com/KaringX/clashmi/releases/latest
 [clashx-meta]: https://github.com/MetaCubeX/ClashX.Meta/releases/latest
