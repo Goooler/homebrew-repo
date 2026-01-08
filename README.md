@@ -19,7 +19,6 @@ brew install <name>
 | `clashx-meta`         | [![Release](https://img.shields.io/github/v/release/MetaCubeX/ClashX.Meta)][clashx-meta]             |
 | `compose-mesh`        | [![Release](https://img.shields.io/github/v/release/c5inco/Mesh)][compose-mesh]                      |
 | `fl-clash`            | [![Release](https://img.shields.io/github/v/release/chen08209/FlClash)][fl-clash]                    |
-| `hiddify`             | [![Release](https://img.shields.io/github/v/release/hiddify/hiddify-app)][hiddify]                   |
 | `kaset`               | [![Release](https://img.shields.io/github/v/release/sozercan/kaset)][kaset]                          |
 | `kaset-fork`          | [![Release](https://img.shields.io/github/v/release/Goooler/kaset)][kaset-fork]                      |
 | `kotlin-explorer`     | [![Release](https://img.shields.io/github/v/release/romainguy/kotlin-explorer)][kotlin-explorer]     |
@@ -33,7 +32,6 @@ brew install <name>
 [clashx-meta]: https://github.com/MetaCubeX/ClashX.Meta/releases/latest
 [compose-mesh]: https://github.com/c5inco/Mesh/releases/latest
 [fl-clash]: https://github.com/chen08209/FlClash/releases/latest
-[hiddify]: https://github.com/hiddify/hiddify-app/releases/latest
 [kaset]: https://github.com/sozercan/kaset/releases/latest
 [kaset-fork]: https://github.com/Goooler/kaset/releases/latest
 [kotlin-explorer]: https://github.com/romainguy/kotlin-explorer/releases/latest
