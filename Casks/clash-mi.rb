@@ -7,6 +7,8 @@ cask "clash-mi" do
   desc "Another Mihomo GUI based on Flutter"
   homepage "https://github.com/KaringX/clashmi"
 
+  depends_on macos: ">= :monterey"
+
   app "Clash Mi.app"
 
   zap trash: [
