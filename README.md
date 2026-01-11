@@ -18,7 +18,6 @@ brew install <name>
 | `clashx-meta`         | [![Release](https://img.shields.io/github/v/release/MetaCubeX/ClashX.Meta)][clashx-meta]             |
 | `fl-clash`            | [![Release](https://img.shields.io/github/v/release/chen08209/FlClash)][fl-clash]                    |
 | `kaset`               | [![Release](https://img.shields.io/github/v/release/sozercan/kaset)][kaset]                          |
-| `kaset-fork`          | [![Release](https://img.shields.io/github/v/release/Goooler/kaset)][kaset-fork]                      |
 | `kotlin-explorer`     | [![Release](https://img.shields.io/github/v/release/romainguy/kotlin-explorer)][kotlin-explorer]     |
 | `string-res-exporter` | [![Release](https://img.shields.io/github/v/release/Goooler/StringResExporter)][string-res-exporter] |
 
@@ -29,6 +28,5 @@ brew install <name>
 [clashx-meta]: https://github.com/MetaCubeX/ClashX.Meta/releases/latest
 [fl-clash]: https://github.com/chen08209/FlClash/releases/latest
 [kaset]: https://github.com/sozercan/kaset/releases/latest
-[kaset-fork]: https://github.com/Goooler/kaset/releases/latest
 [kotlin-explorer]: https://github.com/romainguy/kotlin-explorer/releases/latest
 [string-res-exporter]: https://github.com/Goooler/StringResExporter/releases/latest
