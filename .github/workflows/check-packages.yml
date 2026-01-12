@@ -12,11 +12,22 @@ jobs:
     secrets: inherit # https://docs.github.com/en/actions/how-tos/reuse-automations/reuse-workflows#passing-secrets-to-nested-workflows
 
   changed-packages:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     outputs:
       matrix: ${{ steps.changed-files.outputs.all_changed_files }}
     steps:
       - uses: actions/checkout@v6
+      - name: Print context
+        run: |
+          echo $GITHUB_REPOSITORY
+          HOMEBREW_TAP_REPOSITORY="$HOMEBREW_REPOSITORY/Library/Taps/$(echo "$GITHUB_REPOSITORY" | tr "[:upper:]" "[:lower:]")"
+          echo $HOMEBREW_TAP_REPOSITORY
+      - name: Set up Homebrew Tap
+        run: |
+          brew update-reset "$(brew --repository)"
+          TAP_BASE=$(brew --taps)/${{ github.repository_owner }}
+          mkdir -p $TAP_BASE
+          ln -vs $GITHUB_WORKSPACE $TAP_BASE/${{ github.event.repository.name }}
       - uses: tj-actions/changed-files@v47
         id: changed-files
         with:
