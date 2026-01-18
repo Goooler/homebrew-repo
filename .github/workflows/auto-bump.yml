@@ -32,8 +32,7 @@ jobs:
       - name: Bump packages
         env:
           HOMEBREW_GITHUB_API_TOKEN: ${{ steps.app-token.outputs.token }}
-          REPO: ${{ github.repository }}
         run: |
-          echo "Bumping packages in tap: $REPO"
-          brew bump --no-fork --open-pr --casks --tap=$REPO
-          brew bump --no-fork --open-pr --formulae --tap=$REPO
+          echo "Bumping packages in tap: $GITHUB_REPOSITORY"
+          brew bump --no-fork --open-pr --casks --tap=$GITHUB_REPOSITORY
+          brew bump --no-fork --open-pr --formulae --tap=$GITHUB_REPOSITORY
