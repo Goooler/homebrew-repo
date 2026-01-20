@@ -24,13 +24,12 @@ cask "intellij-idea-eap" do
   end
 
   auto_updates true
-  conflicts_with cask: "intellij-idea"
 
   # The application path is often inconsistent between version
-  rename "IntelliJ IDEA*.app", "IntelliJ IDEA.app"
+  rename "IntelliJ IDEA*.app", "IntelliJ IDEA EAP.app"
 
-  app "IntelliJ IDEA.app"
-  binary "#{appdir}/IntelliJ IDEA.app/Contents/MacOS/idea"
+  app "IntelliJ IDEA EAP.app"
+  binary "#{appdir}/IntelliJ IDEA EAP.app/Contents/MacOS/idea", target: "idea-eap"
 
   uninstall_postflight do
     ENV["PATH"].split(File::PATH_SEPARATOR).map { |path| File.join(path, "idea") }.each do |path|
