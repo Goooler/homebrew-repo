@@ -25,7 +25,7 @@ cask "intellij-idea-eap" do
 
   auto_updates true
 
-  # The application path is often inconsistent between version
+  # The application path is often inconsistent between versions
   rename "IntelliJ IDEA*.app", "IntelliJ IDEA EAP.app"
 
   app "IntelliJ IDEA EAP.app"
