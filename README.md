@@ -17,7 +17,7 @@ brew install <name>
 | `clash-mi`            | [![Release](https://img.shields.io/github/v/release/KaringX/clashmi)][clash-mi]                      |
 | `clashx-meta`         | [![Release](https://img.shields.io/github/v/release/MetaCubeX/ClashX.Meta)][clashx-meta]             |
 | `fl-clash`            | [![Release](https://img.shields.io/github/v/release/chen08209/FlClash)][fl-clash]                    |
-| `intellij-idea-eap`               | [![Release](https://img.shields.io/github/v/release/sozercan/kaset)][kaset]                          |
+| `intellij-idea-eap`   | This is a placeholder                                                                                |
 | `kaset`               | [![Release](https://img.shields.io/github/v/release/sozercan/kaset)][kaset]                          |
 | `kotlin-explorer`     | [![Release](https://img.shields.io/github/v/release/romainguy/kotlin-explorer)][kotlin-explorer]     |
 | `string-res-exporter` | [![Release](https://img.shields.io/github/v/release/Goooler/StringResExporter)][string-res-exporter] |
