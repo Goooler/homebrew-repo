@@ -1,9 +1,9 @@
 cask "clash-mac" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "26.5"
-  sha256 arm:   "32a2122d02ea53379ff3681d3dfa440b33bca2e5153b47c7053ece9da535aaa1",
-         intel: "18c073348dd440a51ba9556bf154c3364b32e704ec50eb7d8ec8774453a878be"
+  version "26.6"
+  sha256 arm:   "9fcc25421a91bf0df8f4bf7c48665ae7ac5a9e5f351a90a1e233ccf38d6435e3",
+         intel: "2c50019f44dbeb0109be01655f50d6fbe192ed64cef79ab1745230a874789aaf"
 
   url "https://github.com/666OS/ClashMac/releases/download/#{version}/ClashMac-#{version}-macos-#{arch}.zip"
   name "ClashMac"
