@@ -7,7 +7,7 @@ cask "clash-mi" do
   desc "Another Mihomo GUI based on Flutter"
   homepage "https://github.com/KaringX/clashmi"
 
-  # Disable pre-releases like v1.0.16.200.
+  # Exclude pre-releases like v1.0.16.200
   livecheck do
     url :url
     strategy :github_latest

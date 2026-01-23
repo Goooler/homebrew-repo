@@ -10,7 +10,7 @@ cask "fl-clash" do
   desc "Multi-platform proxy client based on ClashMeta"
   homepage "https://github.com/chen08209/FlClash"
 
-  # Disable pre-releases like v0.8.92-pre.1.
+  # Exclude pre-releases like v0.8.92-pre.1
   livecheck do
     url :url
     strategy :github_latest
