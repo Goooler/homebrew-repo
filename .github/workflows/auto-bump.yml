@@ -22,12 +22,6 @@ jobs:
         with:
           app-id: ${{ secrets.APP_ID }}
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
-      - name: Merge current PR
-        if: github.event_name == 'pull_request' && github.triggering_actor == 'actionstokenprovider[bot]' # Run this after bump package PRs are created.
-        env:
-          GH_TOKEN: ${{ steps.app-token.outputs.token }}
-        run: |
-          gh pr merge ${{ github.event.number }} --auto --rebase
       - uses: Homebrew/actions/setup-homebrew@main
       - name: Bump packages
         env:
