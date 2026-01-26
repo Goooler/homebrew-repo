@@ -90,6 +90,6 @@ jobs:
     steps:
       - name: Merge
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token will not trigger workflows run, which is desired here.
         run: |
           gh pr merge ${{ github.event.number }} --auto --rebase
