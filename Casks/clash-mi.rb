@@ -7,20 +7,14 @@ cask "clash-mi" do
   desc "Another Mihomo GUI based on Flutter"
   homepage "https://github.com/KaringX/clashmi"
 
-  # Skip version 1.0.17.300 as it has a misnamed DMG file (clashmi_1.0.16.300 instead of clashmi_1.0.17.300)
-  # See: https://github.com/KaringX/clashmi/releases/tag/v1.0.17.300
   livecheck do
     url :url
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-    strategy :github_latest do |json, regex|
-      match = json["tag_name"]&.match(regex)
-      next if match.blank?
+    # Exclude pre-releases like v1.0.16.200
+    strategy :github_latest do |json|
+      version = json["tag_name"]&.delete_prefix("v")
 
-      version = match[1]
-      # Skip 1.0.17.300 due to incorrect asset filename
-      next if version == "1.0.17.300"
-
-      version
+      # TODO: https://github.com/KaringX/clashmi/issues/305
+      version == "1.0.17.300" ? nil : version
     end
   end
 
