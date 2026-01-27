@@ -20,6 +20,8 @@ Casks are used for macOS applications distributed as `.app` bundles, typically i
 If the application provides a **single universal binary** that works on both Apple Silicon and Intel Macs, use this
 format.
 
+**Reference:** [`Casks/clash-mi.rb`](Casks/clash-mi.rb)
+
 **Template:**
 
 ```ruby
