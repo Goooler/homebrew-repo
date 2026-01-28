@@ -88,6 +88,7 @@ jobs:
     needs: final-status
     if: github.event_name == 'pull_request' && github.triggering_actor == 'actionstokenprovider[bot]' # Run this after bump package PRs are created.
     steps:
+      - uses: actions/checkout@v6
       - name: Merge
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token will not trigger workflows run, which is desired here.
