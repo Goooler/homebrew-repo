@@ -7,11 +7,8 @@ cask "clash-mi" do
   desc "Another Mihomo GUI based on Flutter"
   homepage "https://github.com/KaringX/clashmi"
 
-  # Exclude pre-releases like v1.0.16.200
-  livecheck do
-    url :url
-    strategy :github_latest
-  end
+  deprecate! date:    "2026-02-06",
+             because: "is now available in the official Homebrew Cask repository"
 
   depends_on macos: ">= :monterey"
 
