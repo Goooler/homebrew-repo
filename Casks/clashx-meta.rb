@@ -12,7 +12,6 @@ cask "clashx-meta" do
   app "ClashX Meta.app"
 
   uninstall launchctl: "com.metacubex.ClashX.ProxyConfigHelper",
-            quit:      "com.metacubex.ClashX",
             delete:    [
               "/Library/LaunchDaemons/com.metacubex.ClashX.ProxyConfigHelper.plist",
               "/Library/PrivilegedHelperTools/com.metacubex.ClashX.ProxyConfigHelper",
