@@ -11,9 +11,8 @@ cask "clashx-meta" do
 
   app "ClashX Meta.app"
 
-  # TODO: Re-add `quit: "com.metacubex.ClashX"` once Homebrew fixes the Sorbet type error
-  # See: https://github.com/Goooler/homebrew-repo/actions/runs/21813531664/job/62930424575
-  uninstall launchctl: "com.metacubex.ClashX.ProxyConfigHelper",
+  uninstall quit:      "com.metacubex.ClashX",
+            launchctl: "com.metacubex.ClashX.ProxyConfigHelper",
             delete:    [
               "/Library/LaunchDaemons/com.metacubex.ClashX.ProxyConfigHelper.plist",
               "/Library/PrivilegedHelperTools/com.metacubex.ClashX.ProxyConfigHelper",
