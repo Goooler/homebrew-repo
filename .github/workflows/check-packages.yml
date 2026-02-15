@@ -83,7 +83,7 @@ jobs:
           fi
           echo "All required jobs completed successfully."
       - name: Merge current PR
-        if: github.event_name == 'pull_request' && github.triggering_actor == 'actionstokenprovider[bot]' # Run this after bump package PRs are created.
+        if: github.event_name == 'pull_request' && github.triggering_actor == 'actionstokenprovider[bot]'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token will not trigger workflows run, which is desired here.
         run: |
