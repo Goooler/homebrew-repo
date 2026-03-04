@@ -16,6 +16,8 @@ cask "clash-bar" do
 
   postflight do
     system_command "/usr/bin/xattr", args: ["-cr", "#{appdir}/ClashBar.app"], sudo: false
+    ohai "ClashBar is not notarized by Apple. The quarantine attribute has been removed to allow it to open."
+    ohai "If macOS still prevents opening it, go to System Settings > Privacy & Security and click \"Open Anyway\"."
   end
 
   uninstall launchctl: "com.clashbar.helper",
