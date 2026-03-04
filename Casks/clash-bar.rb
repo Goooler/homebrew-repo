@@ -14,6 +14,10 @@ cask "clash-bar" do
 
   app "ClashBar.app"
 
+  postflight do
+    system_command "/usr/bin/xattr", args: ["-cr", "#{appdir}/ClashBar.app"], sudo: false
+  end
+
   uninstall launchctl: "com.clashbar.helper",
             quit:      "com.clashbar",
             delete:    [
