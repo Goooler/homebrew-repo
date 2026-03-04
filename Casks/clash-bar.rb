@@ -10,7 +10,7 @@ cask "clash-bar" do
   desc "Menu bar proxy client based on Mihomo"
   homepage "https://github.com/Sitoi/ClashBar"
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: ">= :ventura"
 
   app "ClashBar.app"
 
