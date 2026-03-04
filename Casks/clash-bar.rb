@@ -15,6 +15,9 @@ cask "clash-bar" do
   app "ClashBar.app"
 
   postflight do
+    # Informative message for users during installation
+    puts "Run `xattr -cr /Applications/ClashBar.app` for the APP, see more details in https://github.com/Sitoi/ClashBar?tab=readme-ov-file#-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98."
+
     system_command "/usr/bin/xattr", args: ["-cr", "#{appdir}/ClashBar.app"], sudo: false
   end
 
