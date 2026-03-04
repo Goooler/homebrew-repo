@@ -58,7 +58,7 @@ end
 
 If the application provides **separate packages for Apple Silicon (arm64) and Intel (x86_64)**, use this format.
 
-**Reference:** [`Casks/clash-mac.rb`](Casks/clash-mac.rb)
+**Reference:** [`Casks/clash-bar.rb`](Casks/clash-bar.rb)
 
 **Template:**
 
