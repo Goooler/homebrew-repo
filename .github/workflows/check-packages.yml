@@ -9,6 +9,7 @@ on:
 jobs:
   auto-bump:
     uses: ./.github/workflows/auto-bump.yml
+    if: github.ref == 'refs/heads/main'
     secrets: inherit # https://docs.github.com/en/actions/how-tos/reuse-automations/reuse-workflows#passing-secrets-to-nested-workflows
 
   changed-packages:
