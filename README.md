@@ -13,6 +13,7 @@ brew install <name>
 
 | Package Name          | Latest Version                                                                                       |
 |-----------------------|------------------------------------------------------------------------------------------------------|
+| `clash-bar`           | [![Release](https://img.shields.io/github/v/release/Sitoi/ClashBar)][clash-bar]                      |
 | `clash-mac`           | [![Release](https://img.shields.io/github/v/release/666OS/ClashMac)][clash-mac]                      |
 | `clashx-meta`         | [![Release](https://img.shields.io/github/v/release/MetaCubeX/ClashX.Meta)][clashx-meta]             |
 | `fl-clash`            | [![Release](https://img.shields.io/github/v/release/chen08209/FlClash)][fl-clash]                    |
@@ -22,6 +23,7 @@ brew install <name>
 
 
 
+[clash-bar]: https://github.com/Sitoi/ClashBar/releases/latest
 [clash-mac]: https://github.com/666OS/ClashMac/releases/latest
 [clashx-meta]: https://github.com/MetaCubeX/ClashX.Meta/releases/latest
 [fl-clash]: https://github.com/chen08209/FlClash/releases/latest
