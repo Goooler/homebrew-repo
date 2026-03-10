@@ -1,9 +1,9 @@
 cask "clash-bar" do
   arch arm: "apple-silicon", intel: "intel"
 
-  version "0.1.6"
-  sha256 arm:   "a712813a79d14fe867ab57ce34680fa1793c416e8416a5272daae041149ab1fd",
-         intel: "84a74e396f82349453fc9ce2901a59fd4f76d7dda940bcd44d0a3cf9a0b8447a"
+  version "0.1.7"
+  sha256 arm:   "cd6415dd205b5764f9454f76b727966c1bbdde9e0289a9ffe069c863a5c61be6",
+         intel: "ef44efa2bf538bc935b7ba07797a7db1a41db67401a68b5532aa43a7abb231e0"
 
   url "https://github.com/Sitoi/ClashBar/releases/download/v#{version}/ClashBar-#{version}-#{arch}.dmg"
   name "ClashBar"
