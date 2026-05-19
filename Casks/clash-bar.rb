@@ -1,16 +1,16 @@
 cask "clash-bar" do
   arch arm: "apple-silicon", intel: "intel"
 
-  version "0.2.5"
-  sha256 arm:   "656326f20daf562962445fd361ce2c17d20eab61b7a09e19574d50e463643cb4",
-         intel: "9eb524771220aa898dfbd0efab112ff9f6c1c7360d223345cf53a1e4e134da93"
+  version "0.2.6"
+  sha256 arm:   "4e3b8187b63e9405d47ef043fcf720ba34970736a6770bc4562c63417689a183",
+         intel: "ce5d0c1f09c5c24c5b80c265e3ae14b06aba2a98ad0480622e035b6936381c92"
 
   url "https://github.com/Sitoi/ClashBar/releases/download/v#{version}/ClashBar-#{version}-#{arch}.dmg"
   name "ClashBar"
   desc "Menu bar proxy client based on Mihomo"
   homepage "https://github.com/Sitoi/ClashBar"
 
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "ClashBar.app"
 
