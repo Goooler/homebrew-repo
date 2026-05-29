@@ -16,6 +16,8 @@ cask "fl-clash" do
     strategy :github_latest
   end
 
+  depends_on :macos
+
   app "FlClash.app"
 
   zap trash: [
