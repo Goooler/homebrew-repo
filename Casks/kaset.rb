@@ -9,7 +9,7 @@ cask "kaset" do
 
   livecheck do
     url :url
-    strategy :github_latest do |json, regex|
+    strategy :github_latest do |json, _regex|
       next if json["tag_name"] == "v0.10.1"
 
       json["tag_name"]
