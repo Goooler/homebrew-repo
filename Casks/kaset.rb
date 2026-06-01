@@ -7,15 +7,6 @@ cask "kaset" do
   desc "Native YouTube Music client"
   homepage "https://github.com/sozercan/kaset"
 
-  livecheck do
-    url :url
-    strategy :github_latest do |json, _regex|
-      next if json["tag_name"] == "v0.10.1"
-
-      json["tag_name"]
-    end
-  end
-
   depends_on macos: :tahoe
 
   app "Kaset.app"
