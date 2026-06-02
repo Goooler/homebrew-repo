@@ -10,6 +10,8 @@ cask "kotlin-explorer" do
   desc "Quickly and easily disassemble Kotlin code"
   homepage "https://github.com/romainguy/kotlin-explorer"
 
+  depends_on :macos
+
   app "Kotlin Explorer.app"
 
   zap trash: [
