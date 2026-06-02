@@ -1,11 +1,11 @@
 cask "kotlin-explorer" do
   arch arm: "arm64", intel: "x64"
 
-  version "1.6.6"
-  sha256 arm:   "ec7a3e74b9abc475c75f0fbca4f0bd7fef864e41d9f110061e79dc21434059e7",
-         intel: "8687415794c00d65af4d7262d4b07deb82e747121d77d0c6172df93eb60f7fb4"
+  version "1.6.7"
+  sha256 arm:   "a59f790d705764c07f55d839104cbfd5cef61b2194ccaeff46aa22490ff04e63",
+         intel: "0b59656ce42e1af4c2ed4ef1d01f79d4891a970533c58254de4c1bec508ff845"
 
-  url "https://github.com/romainguy/kotlin-explorer/releases/download/v#{version}/kotlin-explorer-#{arch}-#{version}.dmg"
+  url "https://github.com/romainguy/kotlin-explorer/releases/download/v#{version}/kotlin-explorer-macos-#{arch}-#{version}.dmg"
   name "Kotlin Explorer"
   desc "Quickly and easily disassemble Kotlin code"
   homepage "https://github.com/romainguy/kotlin-explorer"
