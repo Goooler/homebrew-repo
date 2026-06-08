@@ -7,7 +7,7 @@ cask "kaset" do
   desc "Native YouTube Music client"
   homepage "https://github.com/sozercan/kaset"
 
-  depends_on macos: :tahoe
+  depends_on macos: :sequoia
 
   app "Kaset.app"
 
