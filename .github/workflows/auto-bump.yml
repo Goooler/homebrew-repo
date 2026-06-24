@@ -10,7 +10,7 @@ on:
 jobs:
   bump-packages:
     if: github.event.repository.fork == false
-    runs-on: macos-26
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v7
       - name: Set up Git
