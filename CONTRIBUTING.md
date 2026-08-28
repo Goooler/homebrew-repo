@@ -120,8 +120,7 @@ end
 
 Formulas are used for command-line tools and software that doesn't come in a `.app` bundle.
 
-**Reference:** [`Formula/string-res-exporter.rb`](Formula/string-res-exporter.rb)
-and [Homebrew Official Formula Documentation](https://docs.brew.sh/Formula-Cookbook)
+**Reference:** [Homebrew Official Formula Documentation](https://docs.brew.sh/Formula-Cookbook)
 
 **Template:**
 
@@ -160,7 +159,7 @@ end
 1. Create a new file in the `Formula/` directory named `your-package-name.rb`
 2. The class name should be the package name in CamelCase:
    - Hyphens and underscores are removed and the following character is capitalized
-   - Examples: `string-res-exporter` → `StringResExporter`, `package_name` → `PackageName`
+   - Examples: `my-package` → `MyPackage`, `package_name` → `PackageName`
 3. Calculate the SHA256 hash of the release file:
    ```sh
    shasum -a 256 /path/to/package.tar.gz

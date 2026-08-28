@@ -19,7 +19,6 @@ brew install <name>
 | `kaset`               | [![Release](https://img.shields.io/github/v/release/sozercan/kaset)][kaset]                          |
 | `kumone`              | [![Release](https://img.shields.io/github/v/release/missuo/kumone)][kumone]                          |
 | `kotlin-explorer`     | [![Release](https://img.shields.io/github/v/release/romainguy/kotlin-explorer)][kotlin-explorer]     |
-| `string-res-exporter` | [![Release](https://img.shields.io/github/v/release/Goooler/StringResExporter)][string-res-exporter] |
 
 
 
@@ -29,4 +28,3 @@ brew install <name>
 [kaset]: https://github.com/sozercan/kaset/releases/latest
 [kumone]: https://github.com/missuo/kumone/releases/latest
 [kotlin-explorer]: https://github.com/romainguy/kotlin-explorer/releases/latest
-[string-res-exporter]: https://github.com/Goooler/StringResExporter/releases/latest
