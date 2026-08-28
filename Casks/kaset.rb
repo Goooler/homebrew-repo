@@ -1,6 +1,6 @@
 cask "kaset" do
-  version "0.13.1"
-  sha256 "96201d541530dbd9ab2b711c98ee0fc3d5f15ae0ca2b19c8852630006e70ed22"
+  version "0.14.0"
+  sha256 "b5f5f8f06e6a7fbc3c1f13a0a6d423d4e66372c375a12310493f62e470487c34"
 
   url "https://github.com/sozercan/kaset/releases/download/v#{version}/kaset-v#{version}.dmg"
   name "Kaset"
