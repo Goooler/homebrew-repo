@@ -13,6 +13,7 @@ brew install <name>
 
 | Package Name          | Latest Version                                                                                       |
 |-----------------------|------------------------------------------------------------------------------------------------------|
+| `celldock`            | [![Release](https://img.shields.io/github/v/release/celldock/celldock-for-mac)][celldock]            |
 | `clash-bar`           | [![Release](https://img.shields.io/github/v/release/Sitoi/ClashBar)][clash-bar]                      |
 | `fl-clash`            | [![Release](https://img.shields.io/github/v/release/chen08209/FlClash)][fl-clash]                    |
 | `kaset`               | [![Release](https://img.shields.io/github/v/release/sozercan/kaset)][kaset]                          |
@@ -22,6 +23,7 @@ brew install <name>
 
 
 
+[celldock]: https://github.com/celldock/celldock-for-mac/releases/latest
 [clash-bar]: https://github.com/Sitoi/ClashBar/releases/latest
 [fl-clash]: https://github.com/chen08209/FlClash/releases/latest
 [kaset]: https://github.com/sozercan/kaset/releases/latest
