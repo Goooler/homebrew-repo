@@ -3,14 +3,6 @@
 Thank you for your interest in contributing to this Homebrew tap! This guide will help you add new casks and formulas to
 the repository.
 
-> **Note for AI Agents**: This document serves as both the contributing guide and the agents guide (AGENTS.md) for this
-> repository. AI agents should read and follow all instructions in this document when adding new casks or formulas. Pay
-> special attention to:
-> - The reference files mentioned for each type of contribution
-> - The requirement to update README.md's Available Packages section
-> - The alphabetical ordering requirement for new entries
-> - Testing and validation steps before submission
-
 ## Adding a New Cask
 
 Casks are used for macOS applications distributed as `.app` bundles, typically in `.dmg` or `.pkg` format.
@@ -158,8 +150,8 @@ end
 
 1. Create a new file in the `Formula/` directory named `your-package-name.rb`
 2. The class name should be the package name in CamelCase:
-   - Hyphens and underscores are removed and the following character is capitalized
-   - Examples: `my-package` → `MyPackage`, `package_name` → `PackageName`
+  - Hyphens and underscores are removed and the following character is capitalized
+  - Examples: `my-package` → `MyPackage`, `package_name` → `PackageName`
 3. Calculate the SHA256 hash of the release file:
    ```sh
    shasum -a 256 /path/to/package.tar.gz
