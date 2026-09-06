@@ -11,11 +11,8 @@ cask "kaset" do
 
   app "Kaset.app"
 
-  postflight do
-    # Informative message for users during installation
-    puts "Run `xattr -cr /Applications/Kaset.app` for the APP, see more details in https://github.com/sozercan/kaset/blob/main/README.md#homebrew."
-
-    system_command "/usr/bin/xattr", args: ["-cr", "#{appdir}/Kaset.app"], sudo: false
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-cr", "{{appdir}}/Kaset.app"]
   end
 
   zap trash: [
@@ -26,4 +23,8 @@ cask "kaset" do
     "~/Library/Saved Application State/com.sertacozercan.Kaset.savedState",
     "~/Library/WebKit/com.sertacozercan.Kaset",
   ]
+
+  caveats <<~EOS
+    Run `xattr -cr /Applications/Kaset.app` for the APP, see more details in https://github.com/sozercan/kaset/blob/main/README.md#homebrew.
+  EOS
 end

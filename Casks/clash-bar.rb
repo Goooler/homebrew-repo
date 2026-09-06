@@ -14,11 +14,8 @@ cask "clash-bar" do
 
   app "ClashBar.app"
 
-  postflight do
-    # Informative message for users during installation
-    puts "Run `xattr -cr /Applications/ClashBar.app` for the APP, see more details in https://github.com/Sitoi/ClashBar?tab=readme-ov-file#-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98."
-
-    system_command "/usr/bin/xattr", args: ["-cr", "#{appdir}/ClashBar.app"], sudo: false
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-cr", "{{appdir}}/ClashBar.app"]
   end
 
   uninstall launchctl: "com.clashbar.helper",
@@ -33,4 +30,8 @@ cask "clash-bar" do
     "~/Library/Caches/com.clashbar",
     "~/Library/Preferences/com.clashbar.plist",
   ]
+
+  caveats <<~EOS
+    Run `xattr -cr /Applications/ClashBar.app` for the APP, see more details in https://github.com/Sitoi/ClashBar?tab=readme-ov-file#-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98.
+  EOS
 end
