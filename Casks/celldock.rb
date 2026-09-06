@@ -11,11 +11,8 @@ cask "celldock" do
 
   app "CellDock.app"
 
-  postflight do
-    # Informative message for users during installation
-    puts "Run `xattr -cr /Applications/CellDock.app` for the APP, see more details in https://github.com/celldock/celldock-for-mac/blob/main/README.md."
-
-    system_command "/usr/bin/xattr", args: ["-cr", "#{appdir}/CellDock.app"], sudo: false
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-cr", "{{appdir}}/CellDock.app"]
   end
 
   zap trash: [

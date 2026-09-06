@@ -73,10 +73,9 @@ cask "your-app-name" do
   app "YourApp-v#{version}-macos-#{arch}/YourApp.app"
 
   # Optional: Add post-installation steps if needed
-  postflight do
-    # Example: Inform the user and remove quarantine attribute
-    puts "Removing quarantine attribute from YourApp.app..."
-    system_command "/usr/bin/xattr", args: ["-cr", "#{appdir}/YourApp.app"], sudo: false
+  postflight_steps do
+    # Example: Remove quarantine attribute
+    run "/usr/bin/xattr", args: ["-cr", "{{appdir}}/YourApp.app"]
   end
 
   zap trash: [
@@ -105,7 +104,7 @@ end
 
 - The `arch` variable maps to the appropriate architecture string used in download URLs
 - Customize the `arch` mapping if the upstream project uses different naming conventions
-- The `postflight` block is optional and should only be used if special installation steps are required
+- The `postflight_steps` block is optional and should only be used if special installation steps are required
 - Use `depends_on macos:` to specify minimum macOS version requirements if needed
 
 ## Adding a New Formula
