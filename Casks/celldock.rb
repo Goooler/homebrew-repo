@@ -24,4 +24,8 @@ cask "celldock" do
     "~/Library/Saved Application State/app.celldock.mac.savedState",
     "~/Library/WebKit/app.celldock.mac",
   ]
+
+  caveats <<~EOS
+    Run `xattr -cr /Applications/CellDock.app` for the APP, see more details in https://github.com/celldock/celldock-for-mac/blob/main/README.md.
+  EOS
 end

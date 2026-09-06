@@ -23,4 +23,8 @@ cask "kaset" do
     "~/Library/Saved Application State/com.sertacozercan.Kaset.savedState",
     "~/Library/WebKit/com.sertacozercan.Kaset",
   ]
+
+  caveats <<~EOS
+    Run `xattr -cr /Applications/Kaset.app` for the APP, see more details in https://github.com/sozercan/kaset/blob/main/README.md#homebrew.
+  EOS
 end

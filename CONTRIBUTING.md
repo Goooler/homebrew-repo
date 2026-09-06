@@ -83,6 +83,11 @@ cask "your-app-name" do
     "~/Library/Preferences/com.owner.yourapp.plist",
     "~/Library/Saved Application State/com.owner.yourapp.savedState",
   ]
+
+  # Optional: Add caveats for user instructions
+  caveats <<~EOS
+    Run `xattr -cr /Applications/YourApp.app` for the APP, see more details in https://github.com/OWNER/REPO.
+  EOS
 end
 ```
 
@@ -105,6 +110,7 @@ end
 - The `arch` variable maps to the appropriate architecture string used in download URLs
 - Customize the `arch` mapping if the upstream project uses different naming conventions
 - The `postflight_steps` block is optional and should only be used if special installation steps are required
+- Use `caveats` to provide informative messages or links to users
 - Use `depends_on macos:` to specify minimum macOS version requirements if needed
 
 ## Adding a New Formula

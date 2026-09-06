@@ -30,4 +30,8 @@ cask "clash-bar" do
     "~/Library/Caches/com.clashbar",
     "~/Library/Preferences/com.clashbar.plist",
   ]
+
+  caveats <<~EOS
+    Run `xattr -cr /Applications/ClashBar.app` for the APP, see more details in https://github.com/Sitoi/ClashBar?tab=readme-ov-file#-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98.
+  EOS
 end
