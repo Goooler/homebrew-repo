@@ -10,15 +10,13 @@ cask "fl-clash" do
   desc "Multi-platform proxy client based on ClashMeta"
   homepage "https://github.com/chen08209/FlClash"
 
-  depends_on macos: :monterey
-
   # Exclude pre-releases like v0.8.92-pre.1
   livecheck do
     url :url
     strategy :github_latest
   end
 
-  depends_on macos: :big_sur
+  depends_on macos: :monterey
 
   app "FlClash.app"
 
