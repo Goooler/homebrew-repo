@@ -1,9 +1,9 @@
 cask "fl-clash" do
   arch arm: "arm64", intel: "amd64"
 
-  version "0.8.96"
-  sha256 arm:   "f0d3d6f4d381ec2a9c05850b076b51ea796d335296ba1aa56388d105ec0d90c0",
-         intel: "a687d78658d3ea23f5cd6a7691679a02ad656ccdf41c811aea1fd49c317886b8"
+  version "0.8.97"
+  sha256 arm:   "90811eb66f362d932117f0a575c3ced39f7e93f363ade4af0066f46e8fc9774b",
+         intel: "26002252bec0006dd55d8565e6ea1d99f7365bb7c45babe74c7a119579defe35"
 
   url "https://github.com/chen08209/FlClash/releases/download/v#{version}/FlClash-#{version}-macos-#{arch}.dmg"
   name "FlClash"
@@ -16,7 +16,7 @@ cask "fl-clash" do
     strategy :github_latest
   end
 
-  depends_on macos: :big_sur
+  depends_on macos: :monterey
 
   app "FlClash.app"
 
