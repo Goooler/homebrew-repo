@@ -21,7 +21,7 @@ cask "fl-clash" do
   app "FlClash.app"
 
   postflight_steps do
-    run "/usr/bin/xattr", args: ["-cr", "{{appdir}}/FlClash.app"]
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/FlClash.app"]
   end
 
   zap trash: [
@@ -34,6 +34,6 @@ cask "fl-clash" do
   ]
 
   caveats <<~EOS
-    Run `xattr -cr /Applications/FlClash.app` for the APP, see more details in https://github.com/chen08209/FlClash.
+    Run `xattr -dr com.apple.quarantine /Applications/FlClash.app` for the APP, see more details in https://github.com/chen08209/FlClash.
   EOS
 end

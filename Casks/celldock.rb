@@ -12,7 +12,7 @@ cask "celldock" do
   app "CellDock.app"
 
   postflight_steps do
-    run "/usr/bin/xattr", args: ["-cr", "{{appdir}}/CellDock.app"]
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/CellDock.app"]
   end
 
   zap trash: [
@@ -26,6 +26,6 @@ cask "celldock" do
   ]
 
   caveats <<~EOS
-    Run `xattr -cr /Applications/CellDock.app` for the APP, see more details in https://github.com/celldock/celldock-for-mac/blob/main/README.md.
+    Run `xattr -dr com.apple.quarantine /Applications/CellDock.app` for the APP, see more details in https://github.com/celldock/celldock-for-mac/blob/main/README.md.
   EOS
 end

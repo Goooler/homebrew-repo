@@ -15,7 +15,7 @@ cask "kotlin-explorer" do
   app "Kotlin Explorer.app"
 
   postflight_steps do
-    run "/usr/bin/xattr", args: ["-cr", "{{appdir}}/Kotlin Explorer.app"]
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Kotlin Explorer.app"]
   end
 
   zap trash: [
@@ -25,6 +25,6 @@ cask "kotlin-explorer" do
   ]
 
   caveats <<~EOS
-    Run `xattr -cr "/Applications/Kotlin Explorer.app"` for the APP, see more details in https://github.com/romainguy/kotlin-explorer.
+    Run `xattr -dr com.apple.quarantine "/Applications/Kotlin Explorer.app"` for the APP, see more details in https://github.com/romainguy/kotlin-explorer.
   EOS
 end

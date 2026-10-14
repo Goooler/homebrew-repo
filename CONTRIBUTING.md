@@ -74,8 +74,8 @@ cask "your-app-name" do
 
   # Optional: Add post-installation steps if needed
   postflight_steps do
-    # Example: Remove quarantine attribute
-    run "/usr/bin/xattr", args: ["-cr", "{{appdir}}/YourApp.app"]
+    # Example: Remove quarantine attribute from apps without a Developer ID signature
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/YourApp.app"]
   end
 
   zap trash: [
@@ -86,7 +86,7 @@ cask "your-app-name" do
 
   # Optional: Add caveats for user instructions
   caveats <<~EOS
-    Run `xattr -cr /Applications/YourApp.app` for the APP, see more details in https://github.com/OWNER/REPO.
+    Run `xattr -dr com.apple.quarantine /Applications/YourApp.app` for the APP, see more details in https://github.com/OWNER/REPO.
   EOS
 end
 ```
@@ -109,7 +109,9 @@ end
 
 - The `arch` variable maps to the appropriate architecture string used in download URLs
 - Customize the `arch` mapping if the upstream project uses different naming conventions
-- The `postflight_steps` block is optional and should only be used if special installation steps are required
+- The `postflight_steps` block is optional and should only be used if special installation steps are required,
+  e.g. removing only the `com.apple.quarantine` attribute from apps that are not signed with a Developer ID
+  (check with `spctl -a -vv -t exec /Applications/YourApp.app`)
 - Use `caveats` to provide informative messages or links to users
 - Use `depends_on macos:` to specify minimum macOS version requirements if needed
 
