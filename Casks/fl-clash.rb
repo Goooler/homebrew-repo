@@ -20,6 +20,10 @@ cask "fl-clash" do
 
   app "FlClash.app"
 
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-cr", "{{appdir}}/FlClash.app"]
+  end
+
   zap trash: [
     "~/Library/Application Support/com.follow.clash",
     "~/Library/Caches/com.follow.clash",
@@ -28,4 +32,8 @@ cask "fl-clash" do
     "~/Library/Saved Application State/com.follow.clash.savedState",
     "~/Library/WebKit/com.follow.clash",
   ]
+
+  caveats <<~EOS
+    Run `xattr -cr /Applications/FlClash.app` for the APP, see more details in https://github.com/chen08209/FlClash.
+  EOS
 end
