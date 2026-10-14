@@ -14,9 +14,17 @@ cask "kotlin-explorer" do
 
   app "Kotlin Explorer.app"
 
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-cr", "{{appdir}}/Kotlin Explorer.app"]
+  end
+
   zap trash: [
     "~/Library/Caches/dev.romainguy.kotlin.explorer",
     "~/Library/Preferences/dev.romainguy.kotlin.explorer.plist",
     "~/Library/Saved Application State/dev.romainguy.kotlin.explorer.savedState",
   ]
+
+  caveats <<~EOS
+    Run `xattr -cr "/Applications/Kotlin Explorer.app"` for the APP, see more details in https://github.com/romainguy/kotlin-explorer.
+  EOS
 end
