@@ -12,7 +12,7 @@ cask "kaset" do
   app "Kaset.app"
 
   postflight_steps do
-    run "/usr/bin/xattr", args: ["-cr", "{{appdir}}/Kaset.app"]
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Kaset.app"]
   end
 
   zap trash: [
@@ -25,6 +25,6 @@ cask "kaset" do
   ]
 
   caveats <<~EOS
-    Run `xattr -cr /Applications/Kaset.app` for the APP, see more details in https://github.com/sozercan/kaset/blob/main/README.md#homebrew.
+    Run `xattr -dr com.apple.quarantine /Applications/Kaset.app` for the APP, see more details in https://github.com/sozercan/kaset/blob/main/README.md#homebrew.
   EOS
 end
