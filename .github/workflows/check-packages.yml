@@ -46,8 +46,13 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v7
-      # TODO: https://github.com/Goooler/homebrew-actions/pull/2
-      - uses: Goooler/homebrew-actions/setup-homebrew@4bad72e766eeda0501bd4f02093a44c9abc6b94e
+      - name: Set up Homebrew Tap
+        run: |
+          brew update-reset "$(brew --repository)"
+          TAP_BASE=$(brew --taps)/${{ github.repository_owner }}
+          mkdir -vp $TAP_BASE
+          ln -vs $GITHUB_WORKSPACE $TAP_BASE/${{ github.event.repository.name }}
+          brew trust $GITHUB_REPOSITORY
       - name: Check Package
         env:
           PACKAGE_NAME: ${{ matrix.packages }}
