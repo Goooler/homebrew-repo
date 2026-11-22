@@ -1,6 +1,6 @@
 cask "celldock" do
-  version "0.3.3"
-  sha256 "a2e8be7215abf3bc92befb78ef5e78a12662fec2c4f204e50fec1a5797c49693"
+  version "0.3.4"
+  sha256 "f288db88956f905e07374ca99618dcbdcd72d9f79f5007215adc97b4464e52ef"
 
   url "https://github.com/celldock/celldock-for-mac/releases/download/#{version}/CellDock-#{version}.dmg"
   name "CellDock"
